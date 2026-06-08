@@ -305,6 +305,10 @@ const players = [
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.normalizeScroll(false);
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
+  gsap.defaults({ overwrite: 'auto' });
 
   let isAnimationDone = false;
 
@@ -707,7 +711,6 @@ const players = [
 <style>
   body {
     background-color: #000;
-    overflow-x: hidden;
   }
 
   .logo-container {
