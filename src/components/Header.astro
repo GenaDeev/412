@@ -54,8 +54,12 @@ import logo from '../assets/images/logo.webp';
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.create({
-    start: 300,
-    end: 99999,
+    trigger: '.hero-section',
+    start: 'top top',
+    end: '+=1200',
+    pin: true,
+    scrub: 1,
+    anticipatePin: 1,
     toggleClass: { targets: '#main-header', className: 'header-visible' },
   });
 </script>
