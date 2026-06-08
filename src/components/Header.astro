@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import logo from '../assets/images/logo.webp';
 ---
 
-<header id="main-header" class="fixed top-0 left-0 w-full z-50">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50">
   <div
     class="header-container max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
   >
@@ -54,24 +54,9 @@ import logo from '../assets/images/logo.webp';
   gsap.registerPlugin(ScrollTrigger);
 
   ScrollTrigger.create({
-    trigger: '.hero-section',
-    start: 'bottom top',
-    onEnter: () => {
-      gsap.to('#main-header', {
-        y: 0,
-        opacity: 1,
-        duration: 0.4,
-        ease: 'power2.out',
-      });
-    },
-    onLeaveBack: () => {
-      gsap.to('#main-header', {
-        y: '-100%',
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power2.in',
-      });
-    },
+    start: 300,
+    end: 99999,
+    toggleClass: { targets: '#main-header', className: 'header-visible' },
   });
 </script>
 
@@ -84,6 +69,14 @@ import logo from '../assets/images/logo.webp';
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
     transform: translateY(-100%);
     opacity: 0;
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.4s ease;
+  }
+
+  #main-header.header-visible {
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .logo-link img {
