@@ -1,46 +1,59 @@
-# Astro Starter Kit: Basics
+# 412 — El Programa de Fútbol ⚽
 
-```sh
-bun create astro@latest -- --template basics
+Sitio web oficial de **412**, el programa de streaming de debate de fútbol y entretenimiento.
+
+📺 **Emisión:** Lunes y Viernes a las 22:00 hs (Argentina) en [Kick](https://kick.com)
+📹 **VODs:** [YouTube @programa412](https://youtube.com/@programa412)
+
+## Conductores
+
+- **Davo Xeneize** — [@davoxeneize](https://kick.com/davoxeneize)
+- **La Cobra** — [@lacobraaa](https://kick.com/lacobraaa)
+- **Teo D'Elia**
+- **Benito SDR**
+- **Agusneta**
+
+## Stack
+
+- [Astro](https://astro.build) — Framework SSG con islands architecture
+- [Tailwind CSS v4](https://tailwindcss.com) — Utilidades CSS
+- [GSAP](https://gsap.com) — Animaciones de alto rendimiento y scroll-driven
+
+## Desarrollo
+
+```bash
+# Instalar dependencias
+bun install
+
+# Dev server (localhost:4321)
+bun run dev
+
+# Build de producción
+bun run build
+
+# Preview del build
+bun run preview
+
+# Formatear código
+bun run format
+
+# Linting
+bun run lint
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Estructura
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```
+src/
+├── assets/images/    # Imágenes de conductores y logo
+├── components/       # Componentes Astro (futuro)
+├── layouts/          # Layout base
+├── pages/            # Páginas (index.astro)
+└── styles/           # Tailwind CSS global
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Para más detalle técnico, ver [PROJECT_BLUEPRINT.md](./PROJECT_BLUEPRINT.md).
 
-## 🧞 Commands
+## Licencia
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[MIT](./LICENSE)
