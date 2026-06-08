@@ -61,10 +61,10 @@ const players = [
 <Layout>
   <section
     id="hero"
-    class="hero-section w-full h-screen flex justify-center items-center relative"
+    class="hero-section w-full h-screen flex flex-col justify-center items-center relative"
   >
     <div class="logo-container">
-      <div class="logo-wrapper">
+      <div>
         <Image class="logo" src={logo} alt="Logo de 412" />
         <div class="logo-aura"></div>
       </div>
@@ -79,6 +79,7 @@ const players = [
         src={agus}
         class="character p1"
         alt="Agusneta"
+        data-player="p1"
         width="400"
         height="600"
       />
@@ -86,6 +87,7 @@ const players = [
         src={teo}
         class="character p2"
         alt="Teo"
+        data-player="p2"
         width="400"
         height="600"
       />
@@ -93,6 +95,7 @@ const players = [
         src={davo}
         class="character p3"
         alt="Davo"
+        data-player="p3"
         width="400"
         height="600"
       />
@@ -100,6 +103,7 @@ const players = [
         src={nine}
         class="character p4"
         alt="La Cobra"
+        data-player="p4"
         width="400"
         height="600"
       />
@@ -107,45 +111,66 @@ const players = [
         src={beno}
         class="character p5"
         alt="Benito"
+        data-player="p5"
         width="400"
         height="600"
       />
 
       {
         players.map((p) => (
-          <div class={`player-card card-${p.id}`}>
+          <div class={`player-card card-${p.id} desktop-card`}>
             <div class="card-inner flex flex-col h-full">
               <h3 class="name">{p.yt}</h3>
               <div class="card-divider" />
               <div class="info-list flex flex-col gap-3">
-                <div class="info-row flex justify-between items-center">
+                <div class="info-row text-[0.95rem] flex justify-between items-center">
                   <>
-                    <span class="label">Nombre</span>
-                    <span class="val">{p.realName}</span>
+                    <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                      Nombre
+                    </span>
+                    <span class="val font-bold text-white text-right max-w-[60%]">
+                      {p.realName}
+                    </span>
                   </>
                 </div>
-                <div class="info-row flex justify-between items-center">
+                <div class="info-row text-[0.95rem] flex justify-between items-center">
                   <>
-                    <span class="label">Edad</span>
-                    <span class="val">{p.age}</span>
+                    <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                      Edad
+                    </span>
+                    <span class="val font-bold text-white text-right max-w-[60%]">
+                      {p.age}
+                    </span>
                   </>
                 </div>
-                <div class="info-row flex justify-between items-center">
+                <div class="info-row text-[0.95rem] flex justify-between items-center">
                   <>
-                    <span class="label">Peso</span>
-                    <span class="val">{p.weight}</span>
+                    <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                      Peso
+                    </span>
+                    <span class="val font-bold text-white text-right max-w-[60%]">
+                      {p.weight}
+                    </span>
                   </>
                 </div>
-                <div class="info-row flex justify-between items-center">
+                <div class="info-row text-[0.95rem] flex justify-between items-center">
                   <>
-                    <span class="label">Apodos</span>
-                    <span class="val">{p.nicknames}</span>
+                    <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                      Apodos
+                    </span>
+                    <span class="val font-bold text-white text-right max-w-[60%]">
+                      {p.nicknames}
+                    </span>
                   </>
                 </div>
-                <div class="info-row flex justify-between items-center">
+                <div class="info-row text-[0.95rem] flex justify-between items-center">
                   <>
-                    <span class="label">Posición</span>
-                    <span class="val">{p.pos}</span>
+                    <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                      Posición
+                    </span>
+                    <span class="val font-bold text-white text-right max-w-[60%]">
+                      {p.pos}
+                    </span>
                   </>
                 </div>
               </div>
@@ -153,6 +178,76 @@ const players = [
           </div>
         ))
       }
+      <div class="mobile-card-zone" id="mobile-card-zone">
+        <div
+          id="mobile-click-indicator"
+          class="text-white/40 text-center w-full py-14 uppercase tracking-[0.2em] text-xs transition-opacity duration-300 absolute top-30 left-0 font-light"
+        >
+          Toca a alguuno de los pibes para ver sus datos
+        </div>
+        {
+          players.map((p) => (
+            <div class={`player-card-mobile card-mobile-${p.id}`}>
+              <div class="card-inner flex flex-col">
+                <h3 class="name">{p.yt}</h3>
+                <div class="card-divider" />
+                <div class="info-list flex flex-col gap-3">
+                  <div class="info-row text-[0.95rem] flex justify-between items-center">
+                    <>
+                      <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                        Nombre
+                      </span>
+                      <span class="val font-bold text-white text-right max-w-[60%]">
+                        {p.realName}
+                      </span>
+                    </>
+                  </div>
+                  <div class="info-row text-[0.95rem] flex justify-between items-center">
+                    <>
+                      <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                        Edad
+                      </span>
+                      <span class="val font-bold text-white text-right max-w-[60%]">
+                        {p.age}
+                      </span>
+                    </>
+                  </div>
+                  <div class="info-row text-[0.95rem] flex justify-between items-center">
+                    <>
+                      <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                        Peso
+                      </span>
+                      <span class="val font-bold text-white text-right max-w-[60%]">
+                        {p.weight}
+                      </span>
+                    </>
+                  </div>
+                  <div class="info-row text-[0.95rem] flex justify-between items-center">
+                    <>
+                      <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                        Apodos
+                      </span>
+                      <span class="val font-bold text-white text-right max-w-[60%]">
+                        {p.nicknames}
+                      </span>
+                    </>
+                  </div>
+                  <div class="info-row text-[0.95rem] flex justify-between items-center">
+                    <>
+                      <span class="label text-white/50 font-medium text-[0.8rem] uppercase tracking-[1px]">
+                        Posición
+                      </span>
+                      <span class="val font-bold text-white text-right max-w-[60%]">
+                        {p.pos}
+                      </span>
+                    </>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 
@@ -191,8 +286,14 @@ const players = [
             fill="currentColor"></path>
         </svg>
         <div class="btn-text flex flex-col items-start">
-          <span class="btn-subtitle uppercase">PRÓXIMO PROGRAMA</span>
-          <span class="btn-title" id="next-stream-text">Calculando...</span>
+          <span
+            class="btn-subtitle uppercase text-[0.7rem] md:text-[0.85rem] font-extrabold tracking-[1px] md:tracking-[2px] opacity-80"
+            >PRÓXIMO PROGRAMA</span
+          >
+          <span
+            class="btn-title text-[1.2rem] md:text-[1.6rem] font-black tracking-[1px]"
+            id="next-stream-text">Calculando...</span
+          >
         </div>
       </a>
     </div>
@@ -205,122 +306,7 @@ const players = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Previene FOUC: las imágenes arrancan con visibility:hidden en CSS
-  gsap.set('.character', { visibility: 'visible' });
-
   let isAnimationDone = false;
-
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.hero-section',
-      start: 'top top',
-      end: '+=1200',
-      pin: true,
-      scrub: 1,
-      onUpdate: (self) => {
-        const wasDone = isAnimationDone;
-        isAnimationDone = self.progress === 1;
-
-        const container: HTMLElement | null = document.querySelector(
-          '.characters-container',
-        );
-        const characters = document.querySelectorAll(
-          '.character',
-        ) as NodeListOf<HTMLElement>;
-
-        if (isAnimationDone) {
-          characters.forEach((c) => c.classList.add('interactive'));
-        } else {
-          // Salida suave: esperamos la CSS transition antes de devolver control a GSAP
-          if (wasDone) {
-            document
-              .querySelectorAll('.player-card')
-              .forEach((card) => card.classList.remove('visible'));
-
-            characters.forEach((img) => {
-              img.style.setProperty(
-                'filter',
-                'grayscale(0%) blur(0px) brightness(1)',
-                'important',
-              );
-              img.style.setProperty('transform', 'none', 'important');
-              img.style.setProperty('z-index', '', 'important');
-            });
-
-            if (container) {
-              container.style.cursor = 'default';
-            }
-
-            // Esperar la CSS transition (400ms) antes de limpiar inline styles
-            setTimeout(() => {
-              if (!isAnimationDone) {
-                characters.forEach((img) => {
-                  img.classList.remove('interactive');
-                  img.style.removeProperty('filter');
-                  img.style.removeProperty('transform');
-                  img.style.removeProperty('z-index');
-                });
-              }
-            }, 400);
-          } else if (self.progress < 0.95) {
-            characters.forEach((c) => c.classList.remove('interactive'));
-          }
-        }
-      },
-    },
-  });
-
-  // Timeline: Logo sale → Personajes entran
-  tl.to('.logo-container', {
-    y: -50,
-    opacity: 0,
-    scale: 0.9,
-    filter: 'blur(10px)',
-    duration: 1,
-    ease: 'power2.inOut',
-  }).to(
-    '.scroll-indicator',
-    {
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-    },
-    '<',
-  );
-
-  tl.from(
-    '.character',
-    {
-      y: 150,
-      x: (index) => {
-        const offsets = [-300, -150, 0, 150, 300];
-        return offsets[index];
-      },
-      opacity: 0,
-      scale: 1.5,
-      filter: 'blur(20px)',
-      duration: 2,
-      stagger: {
-        amount: 1,
-        from: 'center',
-      },
-      ease: 'power3.out',
-    },
-    '-=0.5',
-  );
-
-  // Hover pixel-perfect: ignora áreas transparentes de los PNG
-  const $ = (selector: string) => document.querySelector(selector);
-  const $$ = (selector: string) => document.querySelectorAll(selector);
-
-  const container = $('.characters-container') as HTMLElement;
-  const images = Array.from($$('.character')) as HTMLImageElement[];
-
-  const sortedImages = [...images].sort((a, b) => {
-    const zA = parseInt(window.getComputedStyle(a).zIndex) || 0;
-    const zB = parseInt(window.getComputedStyle(b).zIndex) || 0;
-    return zB - zA;
-  });
 
   const hitCanvas = document.createElement('canvas');
   hitCanvas.width = 1;
@@ -329,11 +315,9 @@ const players = [
 
   function getAlphaAt(img: HTMLImageElement, clientX: number, clientY: number) {
     if (!img.naturalWidth || !hitCtx) return 0;
-
     const rect = img.getBoundingClientRect();
     const imgRatio = img.naturalWidth / img.naturalHeight;
     const boxRatio = rect.width / rect.height;
-
     let renderWidth,
       renderHeight,
       offsetX = 0,
@@ -341,79 +325,179 @@ const players = [
     if (imgRatio > boxRatio) {
       renderWidth = rect.width;
       renderHeight = rect.width / imgRatio;
-      offsetY = (rect.height - renderHeight) / 2;
+      offsetY = rect.height - renderHeight; // object-position: bottom
     } else {
       renderHeight = rect.height;
       renderWidth = rect.height * imgRatio;
       offsetX = (rect.width - renderWidth) / 2;
     }
-
     const x = clientX - rect.left - offsetX;
     const y = clientY - rect.top - offsetY;
-
     if (x < 0 || x > renderWidth || y < 0 || y > renderHeight) return 0;
-
     const origX = Math.floor((x / renderWidth) * img.naturalWidth);
     const origY = Math.floor((y / renderHeight) * img.naturalHeight);
-
     hitCtx.clearRect(0, 0, 1, 1);
     hitCtx.drawImage(img, origX, origY, 1, 1, 0, 0, 1, 1);
     return hitCtx.getImageData(0, 0, 1, 1).data[3];
   }
 
-  const cards = Array.from($$('.player-card'));
+  const mm = gsap.matchMedia();
 
-  container.addEventListener('mousemove', (e: MouseEvent) => {
-    if (!isAnimationDone) return;
+  mm.add('(min-width: 768px)', () => {
+    gsap.set('.character', { visibility: 'visible' });
 
-    let hoveredImg = null;
+    const container = document.querySelector(
+      '.characters-container',
+    ) as HTMLElement | null;
+    const characters = document.querySelectorAll(
+      '.character',
+    ) as NodeListOf<HTMLElement>;
+    const desktopCards = document.querySelectorAll('.desktop-card');
 
-    for (const img of sortedImages) {
-      if (getAlphaAt(img, e.clientX, e.clientY) > 0) {
-        hoveredImg = img;
-        break;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero-section',
+        start: 'top top',
+        end: '+=1200',
+        pin: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const wasDone = isAnimationDone;
+          isAnimationDone = self.progress > 0.85;
+
+          if (isAnimationDone) {
+            characters.forEach((c) => c.classList.add('interactive'));
+          } else {
+            if (wasDone) {
+              desktopCards.forEach((card) => card.classList.remove('visible'));
+
+              characters.forEach((img) => {
+                img.style.setProperty(
+                  'filter',
+                  'grayscale(0%) blur(0px) brightness(1)',
+                  'important',
+                );
+                img.style.setProperty('transform', 'none', 'important');
+                img.style.setProperty('z-index', '', 'important');
+              });
+
+              if (container) container.style.cursor = 'default';
+
+              setTimeout(() => {
+                if (!isAnimationDone) {
+                  characters.forEach((img) => {
+                    img.classList.remove('interactive');
+                    img.style.removeProperty('filter');
+                    img.style.removeProperty('transform');
+                    img.style.removeProperty('z-index');
+                  });
+                }
+              }, 400);
+            } else if (self.progress < 0.85) {
+              characters.forEach((c) => c.classList.remove('interactive'));
+            }
+          }
+        },
+      },
+    });
+
+    tl.to('.logo-container', {
+      y: -50,
+      opacity: 0,
+      scale: 0.9,
+      filter: 'blur(10px)',
+      duration: 1,
+      ease: 'power2.inOut',
+    }).to('.scroll-indicator', { opacity: 0, y: 20, duration: 0.5 }, '<');
+
+    tl.from(
+      '.character',
+      {
+        y: 150,
+        x: (index: number) => {
+          const offsets = [-300, -150, 0, 150, 300];
+          return offsets[index];
+        },
+        opacity: 0,
+        scale: 1.5,
+        filter: 'blur(20px)',
+        duration: 2,
+        stagger: { amount: 1, from: 'center' },
+        ease: 'power3.out',
+      },
+      '-=0.5',
+    );
+
+    // === Desktop: hover pixel-perfect ===
+    const images = Array.from(characters) as HTMLImageElement[];
+
+    const sortedImages = [...images].sort((a, b) => {
+      const zA = parseInt(window.getComputedStyle(a).zIndex) || 0;
+      const zB = parseInt(window.getComputedStyle(b).zIndex) || 0;
+      return zB - zA;
+    });
+
+    container.addEventListener('mousemove', (e: MouseEvent) => {
+      if (!isAnimationDone) return;
+      let hoveredImg: HTMLImageElement | null = null;
+      for (const img of sortedImages) {
+        if (getAlphaAt(img, e.clientX, e.clientY) > 0) {
+          hoveredImg = img;
+          break;
+        }
       }
-    }
 
-    if (hoveredImg) {
-      const playerId = Array.from(hoveredImg.classList).find((c) =>
-        c.startsWith('p'),
-      );
-
-      images.forEach((img) => {
-        if (img === hoveredImg) {
+      if (hoveredImg) {
+        const playerId = Array.from(hoveredImg.classList).find((c) =>
+          c.startsWith('p'),
+        );
+        images.forEach((img) => {
+          if (img === hoveredImg) {
+            img.style.setProperty(
+              'filter',
+              'grayscale(0%) blur(0px) brightness(1.1)',
+              'important',
+            );
+            img.style.setProperty(
+              'transform',
+              'scale(1.03) translateY(-10px)',
+              'important',
+            );
+            img.style.setProperty('z-index', '10', 'important');
+          } else {
+            img.style.setProperty(
+              'filter',
+              'grayscale(100%) blur(0px) brightness(0.6)',
+              'important',
+            );
+            img.style.setProperty('transform', 'none', 'important');
+            img.style.setProperty('z-index', '', 'important');
+          }
+        });
+        desktopCards.forEach((card) => {
+          card.classList.toggle(
+            'visible',
+            card.classList.contains(`card-${playerId}`),
+          );
+        });
+        container.style.cursor = 'pointer';
+      } else {
+        images.forEach((img) => {
           img.style.setProperty(
             'filter',
-            'grayscale(0%) blur(0px) brightness(1.1)',
-            'important',
-          );
-          img.style.setProperty(
-            'transform',
-            'scale(1.03) translateY(-10px)',
-            'important',
-          );
-          img.style.setProperty('z-index', '10', 'important');
-        } else {
-          img.style.setProperty(
-            'filter',
-            'grayscale(100%) blur(0px) brightness(0.6)',
+            'grayscale(0%) blur(0px) brightness(1)',
             'important',
           );
           img.style.setProperty('transform', 'none', 'important');
           img.style.setProperty('z-index', '', 'important');
-        }
-      });
+        });
+        desktopCards.forEach((card) => card.classList.remove('visible'));
+        container.style.cursor = 'default';
+      }
+    });
 
-      cards.forEach((card) => {
-        if (card.classList.contains(`card-${playerId}`)) {
-          card.classList.add('visible');
-        } else {
-          card.classList.remove('visible');
-        }
-      });
-
-      container.style.cursor = 'pointer';
-    } else {
+    container.addEventListener('mouseleave', () => {
+      if (!isAnimationDone) return;
       images.forEach((img) => {
         img.style.setProperty(
           'filter',
@@ -423,24 +507,158 @@ const players = [
         img.style.setProperty('transform', 'none', 'important');
         img.style.setProperty('z-index', '', 'important');
       });
-      cards.forEach((card) => card.classList.remove('visible'));
+      desktopCards.forEach((card) => card.classList.remove('visible'));
       container.style.cursor = 'default';
-    }
+    });
   });
 
-  container.addEventListener('mouseleave', () => {
-    if (!isAnimationDone) return;
-    images.forEach((img) => {
-      img.style.setProperty(
-        'filter',
-        'grayscale(0%) blur(0px) brightness(1)',
-        'important',
-      );
-      img.style.setProperty('transform', 'none', 'important');
-      img.style.setProperty('z-index', '', 'important');
+  mm.add('(max-width: 767px)', () => {
+    gsap.set('.character', { visibility: 'visible' });
+
+    gsap.fromTo(
+      '.logo-container',
+      { opacity: 1, y: 0, scale: 1 },
+      {
+        scrollTrigger: {
+          trigger: '.hero-section',
+          start: 'top top',
+          end: '200px top',
+          scrub: 0.5,
+        },
+        opacity: 0,
+        y: -40,
+        scale: 0.9,
+      },
+    );
+
+    gsap.fromTo(
+      '.scroll-indicator',
+      { opacity: 1 },
+      {
+        scrollTrigger: {
+          trigger: '.hero-section',
+          start: 'top top',
+          end: '100px top',
+          scrub: 0.5,
+        },
+        opacity: 0,
+      },
+    );
+
+    gsap.fromTo(
+      '.character',
+      { opacity: 0, y: 400, scale: 0.4, filter: 'blur(30px)' },
+      {
+        scrollTrigger: {
+          trigger: '.hero-section',
+          start: 'top top',
+          end: '+=70svh',
+          scrub: 0.5,
+          onLeave: () => {
+            isAnimationDone = true;
+          },
+          onEnterBack: () => {
+            isAnimationDone = true;
+          },
+          onLeaveBack: () => {
+            isAnimationDone = false;
+            clearCards();
+          },
+        },
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        filter: 'blur(0px)',
+        stagger: { amount: 0.4, from: 'center' },
+      },
+    );
+
+    const images = Array.from(
+      document.querySelectorAll('.character'),
+    ) as HTMLImageElement[];
+    const mobileCards = Array.from(
+      document.querySelectorAll('.player-card-mobile'),
+    );
+    const cardZone = document.getElementById('mobile-card-zone');
+    let activeTap: string | null = null;
+
+    function showCard(playerId: string) {
+      activeTap = playerId;
+      images.forEach((i) => {
+        if (i.dataset.player === playerId) {
+          i.style.setProperty(
+            'filter',
+            'grayscale(0%) brightness(1.1)',
+            'important',
+          );
+          i.style.setProperty('transform', 'scale(1.05)', 'important');
+        } else {
+          i.style.setProperty(
+            'filter',
+            'grayscale(100%) brightness(0.5)',
+            'important',
+          );
+          i.style.setProperty('transform', 'none', 'important');
+        }
+      });
+      mobileCards.forEach((card) => {
+        card.classList.toggle(
+          'visible',
+          card.classList.contains(`card-mobile-${playerId}`),
+        );
+      });
+      const clickIndicator = document.getElementById('mobile-click-indicator');
+      if (clickIndicator) clickIndicator.style.opacity = '0';
+      if (cardZone) cardZone.classList.add('active');
+    }
+
+    function clearCards() {
+      activeTap = null;
+      images.forEach((i) => {
+        i.style.setProperty(
+          'filter',
+          'grayscale(0%) brightness(1)',
+          'important',
+        );
+        i.style.setProperty('transform', 'none', 'important');
+      });
+      mobileCards.forEach((c) => c.classList.remove('visible'));
+      const clickIndicator = document.getElementById('mobile-click-indicator');
+      if (clickIndicator) clickIndicator.style.opacity = '1';
+      if (cardZone) cardZone.classList.remove('active');
+    }
+
+    const sortedMobileImages = [...images].sort((a, b) => {
+      const zA = parseInt(window.getComputedStyle(a).zIndex) || 0;
+      const zB = parseInt(window.getComputedStyle(b).zIndex) || 0;
+      return zB - zA;
     });
-    cards.forEach((card) => card.classList.remove('visible'));
-    container.style.cursor = 'default';
+
+    document.addEventListener('click', (e) => {
+      if (!isAnimationDone) return;
+      const target = e.target as HTMLElement;
+
+      let clickedImg: HTMLImageElement | null = null;
+      // Pixel perfect collision detection
+      for (const img of sortedMobileImages) {
+        if (getAlphaAt(img, e.clientX, e.clientY) > 0) {
+          clickedImg = img;
+          break;
+        }
+      }
+
+      if (clickedImg) {
+        const playerId = clickedImg.dataset.player;
+        if (!playerId) return;
+        if (activeTap === playerId) {
+          clearCards();
+        } else {
+          showCard(playerId);
+        }
+      } else if (!target.closest('.player-card-mobile')) {
+        clearCards();
+      }
+    });
   });
 
   // Próximo programa: calcula Lunes (Davo) o Viernes (Cobra) client-side
@@ -465,7 +683,6 @@ const players = [
 
     const btn = document.getElementById('next-stream-btn');
     const text = document.getElementById('next-stream-text');
-
     if (btn && text) {
       btn.setAttribute('href', nextStreamLink);
       text.textContent = `${nextStreamDay} 22HS`;
@@ -570,20 +787,20 @@ const players = [
     position: relative;
     height: 100%;
     object-fit: contain;
-    margin: 0 -8%;
+    object-position: bottom center;
+    margin: -5% -8%;
     -webkit-user-drag: none;
     user-select: none;
-    visibility: hidden; /* FOUC prevention — GSAP reveals on init */
+    visibility: hidden;
   }
 
-  /* Transición solo post-animación para no interferir con GSAP scrub */
   .interactive {
     transition:
       filter 0.4s ease,
       transform 0.4s ease !important;
   }
 
-  /* Player cards (glassmorphism) */
+  /* Desktop player cards (glassmorphism) */
   .player-card {
     position: absolute;
     width: 260px;
@@ -641,6 +858,139 @@ const players = [
     top: 30%;
   }
 
+  /* Mobile card zone */
+  .mobile-card-zone {
+    display: none;
+  }
+
+  /* Mobile player cards */
+  .player-card-mobile {
+    display: none;
+    width: 90%;
+    max-width: 320px;
+    box-sizing: border-box;
+    background: rgba(15, 20, 15, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 16px;
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.9),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding: 26px 22px;
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    flex-direction: column;
+    pointer-events: none;
+    grid-area: 1 / 1;
+  }
+
+  .player-card-mobile.visible {
+    opacity: 1;
+    border-color: #00e701;
+    box-shadow:
+      0 10px 40px rgba(0, 231, 1, 0.2),
+      inset 0 0 20px rgba(0, 231, 1, 0.2);
+  }
+
+  @media (max-width: 767px) {
+    .mobile-card-zone {
+      display: grid;
+      position: absolute;
+      top: 5svh;
+      left: 0;
+      width: 100%;
+      align-items: start;
+      justify-items: center;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    .mobile-card-zone * {
+      pointer-events: auto;
+    }
+
+    .hero-section {
+      height: auto;
+      min-height: auto;
+      display: block;
+    }
+
+    .logo-container {
+      position: relative;
+      top: auto;
+      left: auto;
+      height: 80svh;
+      width: 100%;
+    }
+
+    .scroll-indicator {
+      top: calc(80svh - 60px);
+      bottom: auto;
+    }
+
+    .characters-container {
+      height: 90svh;
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, black 40%);
+      mask-image: linear-gradient(to top, transparent 0%, black 40%);
+    }
+
+    .character {
+      margin: 0 -14%;
+      max-width: 48vw;
+    }
+
+    .p1 {
+      height: 60%;
+    }
+    .p2 {
+      height: 70%;
+    }
+    .p3 {
+      height: 80%;
+    }
+    .p4 {
+      height: 70%;
+    }
+    .p5 {
+      height: 60%;
+    }
+
+    .main-title {
+      font-size: 3.5rem;
+      letter-spacing: -1px;
+      line-height: 0.95;
+    }
+
+    .logo-large {
+      width: 200px;
+    }
+
+    .kick-btn {
+      padding: 12px 24px;
+      gap: 10px;
+    }
+
+    .desktop-card {
+      display: none !important;
+    }
+
+    .mobile-card-zone {
+      display: grid;
+      align-items: start;
+    }
+
+    .player-card-mobile {
+      display: flex;
+      grid-area: 1 / 1;
+    }
+  }
+
   .card-inner h3.name {
     font-size: 1.6rem;
     font-weight: 900;
@@ -663,25 +1013,6 @@ const players = [
     margin: 0 0 15px 0;
   }
 
-  .info-row {
-    font-size: 0.95rem;
-  }
-
-  .info-row .label {
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 500;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .info-row .val {
-    font-weight: 700;
-    color: #fff;
-    text-align: right;
-    max-width: 60%;
-  }
-
   .info-section {
     background: radial-gradient(circle at center, #0a120a 0%, #000 100%);
   }
@@ -702,6 +1033,8 @@ const players = [
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    clip-path: inset(15% 0 15% 0);
+    margin: -40px 0;
   }
 
   .logo-aura {
@@ -730,10 +1063,10 @@ const players = [
   .logo-aura::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: -1%;
+    left: -1%;
+    width: 102%;
+    height: 102%;
     background: conic-gradient(
       from 0deg,
       transparent 0%,
@@ -761,9 +1094,10 @@ const players = [
 
   .main-title {
     color: white;
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: -2px;
+    line-height: 0.9;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     font-family: 'Impact', 'Arial Black', sans-serif;
     font-style: italic;
@@ -786,19 +1120,6 @@ const players = [
   .kick-btn:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 40px rgba(0, 231, 1, 0.6);
-  }
-
-  .btn-subtitle {
-    font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    opacity: 0.8;
-  }
-
-  .btn-title {
-    font-size: 1.6rem;
-    font-weight: 900;
-    letter-spacing: 1px;
   }
 
   .p1 {
