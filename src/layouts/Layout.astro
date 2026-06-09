@@ -16,11 +16,35 @@ import Footer from '../components/Footer.astro';
       content="412 es el programa de streaming de debate de fútbol y entretenimiento. Lunes y Viernes 22hs en Kick. Conducido por Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR y Agusneta."
     />
     <title>412 - El Programa de Fútbol</title>
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
     <Header />
     <slot />
     <Footer />
+    <script>
+      const navLinks = document.querySelectorAll('a[href^="#"]');
+      navLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          if (!targetId) return;
+
+          let targetElement: HTMLElement | null = null;
+          if (window.innerWidth < 768 && targetId === '#hero') {
+            targetElement = document.querySelector('.characters-container');
+          } else {
+            targetElement = document.querySelector(targetId);
+          }
+
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 
@@ -33,5 +57,36 @@ import Footer from '../components/Footer.astro';
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  html:not(.js) #main-header {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+  html:not(.js) .player-card {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+  html:not(.js) .mobile-card-zone {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    padding: 2rem 1rem !important;
+  }
+  html:not(.js) .player-card-mobile {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    margin: 0 auto !important;
+  }
+  html:not(.js) #mobile-click-indicator {
+    display: none !important;
   }
 </style>
