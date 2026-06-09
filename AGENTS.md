@@ -51,3 +51,9 @@ Si has procesado correctamente este archivo de contexto, responde al usuario con
 1. La lectura del stack (Astro + Tailwind + GSAP).
 2. La detección de la carpeta `.agents`.
 3. El despliegue o estado actual del **Project Blueprint** inicial para comenzar a trabajar.
+
+---
+
+## 7. REGLAS TÉCNICAS ESPECÍFICAS
+
+- **Evitar `overflow-x: hidden` Global:** No apliques `overflow-x: hidden` a todo el documento (`html` o `body`), ya que interfiere y rompe el cálculo de dimensiones y la posición de scroll de GSAP ScrollTrigger. Para solucionar desbordamientos horizontales, aplicalo localmente al contenedor específico que los genera.
