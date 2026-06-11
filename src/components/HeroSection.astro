@@ -301,7 +301,6 @@ const players = [
   const mm = gsap.matchMedia();
 
   mm.add('(min-width: 768px)', () => {
-    gsap.set('.character', { visibility: 'visible' });
 
     const container = document.querySelector(
       '.characters-container',
@@ -367,7 +366,7 @@ const players = [
       ease: 'power2.inOut',
     }).to('.scroll-indicator', { opacity: 0, y: 20, duration: 0.5 }, '<');
 
-    tl.from(
+    tl.fromTo(
       '.character',
       {
         y: 150,
@@ -378,6 +377,13 @@ const players = [
         opacity: 0,
         scale: 1.5,
         filter: 'blur(20px)',
+      },
+      {
+        y: 0,
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
         duration: 2,
         stagger: { amount: 1, from: 'center' },
         ease: 'power3.out',
@@ -471,7 +477,6 @@ const players = [
   });
 
   mm.add('(max-width: 767px)', () => {
-    gsap.set('.character', { visibility: 'visible' });
 
     gsap.fromTo(
       '.logo-container',
@@ -703,7 +708,8 @@ const players = [
   }
 
   .js .character {
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .character {
@@ -717,6 +723,7 @@ const players = [
   }
 
   .interactive {
+    pointer-events: auto;
     transition:
       filter 0.4s ease,
       transform 0.4s ease !important;
