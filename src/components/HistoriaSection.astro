@@ -1,0 +1,346 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/images/logo.webp';
+import primerPrograma from '../assets/images/primer_programa.webp';
+import cuatrodo from '../assets/images/cuatrodo.webp';
+import escudo412 from '../assets/images/escudo_412.webp';
+import escudoLuzu from '../assets/images/escudo_luzu.webp';
+---
+
+<section
+  id="historia"
+  class="historia-section w-full relative z-10 py-24 bg-black overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <!-- Título de la sección -->
+    <div class="text-center mb-20 animate-title opacity-0 translate-y-10">
+      <h2 class="section-title uppercase text-4xl md:text-6xl font-black italic tracking-wide text-white m-0">
+        Nuestra <span class="text-kick">Historia</span>
+      </h2>
+      <div class="title-underline mx-auto mt-4 h-1 bg-kick shadow-[0_0_10px_#00e701]"></div>
+    </div>
+
+    <!-- Contenedor de la Línea de Tiempo -->
+    <div class="timeline-container relative mt-16">
+      <!-- Línea vertical de progreso (GSAP animará su altura) -->
+      <div class="timeline-line absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-neutral-800 -translate-x-1/2 rounded-full overflow-hidden">
+        <div class="timeline-progress w-full h-0 bg-kick shadow-[0_0_15px_#00e701]"></div>
+      </div>
+
+      <!-- Item 1: Origen Pandemia -->
+      <div class="timeline-item flex flex-col md:flex-row items-center md:justify-between w-full mb-24 md:mb-32 relative">
+        <div class="timeline-dot absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-black border-4 border-kick -translate-x-1/2 z-20 shadow-[0_0_8px_#00e701]"></div>
+        
+        <div class="timeline-card-wrapper w-full md:w-[45%] order-2 md:order-1 animate-left opacity-0 -translate-x-20">
+          <div class="timeline-card glass-card p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+            <div class="card-glow absolute inset-0 opacity-0 transition-opacity duration-300"></div>
+            <span class="card-date text-kick font-black text-sm uppercase tracking-widest block mb-2">2020 - 2021</span>
+            <h3 class="card-title text-2xl md:text-3xl font-black text-white italic uppercase mb-4">El Encuentro en Pandemia</h3>
+            <p class="card-text text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+              Durante los meses de confinamiento obligatorio, el mundo digital se convirtió en el principal refugio para millones de personas en todo el mundo. En ese contexto de incertidumbre, David Quint, conocido popularmente en redes como <strong>Davoo Xeneize</strong>, comenzó a destacar en el streaming de fútbol gracias a su honestidad brutal, su conocimiento enciclopédico y sus divertidos análisis. De manera paralela, <strong>Teo D'Elía</strong> (hijo del reconocido actor de <em>Los Simuladores</em>, Federico D'Elía) ganaba una gran notoriedad en TikTok por sus ingeniosos sketches actorales y humorísticos.
+            </p>
+            <p class="card-text text-neutral-300 text-sm md:text-base leading-relaxed font-light mt-3">
+              Ambos creadores de contenido conectaron rápidamente a través de las redes sociales al descubrir que compartían no solo su amor incondicional por el fútbol, sino también una visión idéntica del humor. Su amistad pasó del plano virtual al real cuando Davo viajó a la casa de Teo para convivir durante una semana entera. Esa convivencia fue clave: no solo produjeron clips virales que divirtieron a la comunidad, sino que sirvió para sentar las bases de una dupla que estaba destinada a redefinir el streaming deportivo.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-media w-full md:w-[45%] order-1 md:order-2 mb-8 md:mb-0 flex justify-center items-center relative animate-right opacity-0 translate-x-20">
+          <div class="media-container relative rounded-2xl bg-white/5 border border-white/10 overflow-hidden w-full max-w-md aspect-video flex items-center justify-center">
+            <!-- Superposición artística de los personajes fundadores -->
+            <div class="absolute inset-0 bg-radial-glow opacity-30"></div>
+            <div class="flex items-end justify-center gap-4 w-full h-full relative z-10">
+              <Image src={primerPrograma} alt="Miniatura del primer programa de 412 con Davo y Teo" class="w-full h-auto object-contain filter drop-shadow-[0_0_15px_rgba(0,231,1,0.2)] transform hover:scale-105 transition-transform" />
+            </div>
+            <!-- Indicador descriptivo para accesibilidad y SEO -->
+            <div class="absolute bottom-2 z-20 left-2 right-2 bg-black/60 backdrop-blur-md py-1 px-3 rounded-lg text-center text-xs text-white/80 border border-white/5">
+              Miniatura del primer programa de 412 con Davo y Teo
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: El Nombre 412 -->
+      <div class="timeline-item flex flex-col md:flex-row items-center md:justify-between w-full mb-24 md:mb-32 relative">
+        <div class="timeline-dot absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-black border-4 border-kick -translate-x-1/2 z-20 shadow-[0_0_8px_#00e701]"></div>
+        
+        <div class="timeline-media w-full md:w-[45%] order-1 mb-8 md:mb-0 flex justify-center items-center relative animate-left opacity-0 -translate-x-20">
+          <div class="media-container relative p-4 rounded-2xl bg-white/5 border border-white/10 overflow-hidden w-full max-w-md aspect-video flex items-center justify-center">
+            <div class="absolute inset-0 bg-radial-glow opacity-30"></div>
+            <Image src={logoImg} alt="Logo de 412" class="w-1/2 h-auto object-contain filter drop-shadow-[0_0_20px_rgba(0,231,1,0.5)] logo-glow" />
+            <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md py-1 px-3 rounded-lg text-center text-xs text-white/80 border border-white/5">
+              412 - El significado del 4 de diciembre
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-card-wrapper w-full md:w-[45%] order-2 animate-right opacity-0 translate-x-20">
+          <div class="timeline-card glass-card p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+            <div class="card-glow absolute inset-0 opacity-0 transition-opacity duration-300"></div>
+            <span class="card-date text-kick font-black text-sm uppercase tracking-widest block mb-2">Origen del Nombre</span>
+            <h3 class="card-title text-2xl md:text-3xl font-black text-white italic uppercase mb-4">¿Por Qué se llama 412?</h3>
+            <p class="card-text text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+              Por mucho tiempo, el origen del nombre <strong>"412"</strong> fue objeto de intensos debates, especulaciones e ingeniosas teorías por parte de los seguidores del programa. Muchos creían que se trataba de la numeración de algún departamento en donde se reunían a grabar, una patente de auto o una formación táctica inusual del fútbol antiguo. Sin embargo, la explicación real es mucho más íntima, familiar y significativa: hace referencia directa al <strong>4 de diciembre (4/12 en formato de fecha corta)</strong>.
+            </p>
+            <p class="card-text text-neutral-300 text-sm md:text-base leading-relaxed font-light mt-3">
+              Descubrir que compartían exactamente la misma fecha de nacimiento (el 4 de diciembre) fue visto por Davo y Teo como una señal inequívoca de que debían emprender un proyecto digital juntos. En <strong>2024</strong>, esa coincidencia dio nombre al programa piloto en Kick, el cual se centraba en dinámicas lúdicas y desafíos sobre historia futbolística. El nombre quedó como el sello indeleble del show, conmemorando el lazo de amistad sobre el cual se construyó todo el proyecto.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: La Mesa Completa -->
+      <div class="timeline-item flex flex-col md:flex-row items-center md:justify-between w-full mb-24 md:mb-32 relative">
+        <div class="timeline-dot absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-black border-4 border-kick -translate-x-1/2 z-20 shadow-[0_0_8px_#00e701]"></div>
+        
+        <div class="timeline-card-wrapper w-full md:w-[45%] order-2 md:order-1 animate-left opacity-0 -translate-x-20">
+          <div class="timeline-card glass-card p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+            <div class="card-glow absolute inset-0 opacity-0 transition-opacity duration-300"></div>
+            <span class="card-date text-kick font-black text-sm uppercase tracking-widest block mb-2">Abril 2025</span>
+            <h3 class="card-title text-2xl md:text-3xl font-black text-white italic uppercase mb-4">La Mesa se Agranda</h3>
+            <p class="card-text text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+              Con el éxito de la primera temporada en 2024, Davo y Teo entendieron que el formato tenía el potencial de convertirse en una mesa de debate robusta y formal. Para competir mano a mano con los medios de comunicación deportivos tradicionales y mantener los códigos de espontaneidad del streaming, decidieron asociarse con la productora y agencia <strong>Doxen Management</strong>. Así, en abril de 2025 relanzaron el programa incorporando a tres grandes figuras del ecosistema:
+            </p>
+            <ul class="list-disc list-inside text-neutral-300 text-sm md:text-base font-light space-y-2 mt-4">
+              <li><strong class="text-white">La Cobra (Lautaro del Campo):</strong> Su incorporación inyectó al programa la dosis justa de debate pasional y confrontación, ideal para hacer contrapeso a las opiniones de Davo.</li>
+              <li><strong class="text-white">La Agusneta (Agustina):</strong> Aportó frescura y un análisis táctico riguroso del fútbol argentino e internacional, equilibrando la mesa con su amplio conocimiento.</li>
+              <li><strong class="text-white">Benito SDR (Beno):</strong> Sumó su estilo único de humor absurdo, datos históricos y curiosidades peculiares, convirtiendo cada juego en un show memorable.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-media w-full md:w-[45%] order-1 md:order-2 mb-8 md:mb-0 flex justify-center items-center relative animate-right opacity-0 translate-x-20">
+          <div class="media-container relative p-4 rounded-2xl bg-white/5 border border-white/10 overflow-hidden w-full max-w-md aspect-video flex items-center justify-center">
+            <div class="absolute inset-0 bg-radial-glow opacity-30"></div>
+            <Image src={cuatrodo} alt="Los conductores de 412" class="w-full h-full object-cover rounded-xl filter drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] transform hover:scale-102 transition-transform" />
+            <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md py-1 px-3 rounded-lg text-center text-xs text-white/80 border border-white/5">
+              Formación oficial del programa 412
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: El Duelo con Luzu -->
+      <div class="timeline-item flex flex-col md:flex-row items-center md:justify-between w-full relative">
+        <div class="timeline-dot absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-black border-4 border-kick -translate-x-1/2 z-20 shadow-[0_0_8px_#00e701]"></div>
+        
+        <div class="timeline-media w-full md:w-[45%] order-1 mb-8 md:mb-0 flex justify-center items-center relative animate-left opacity-0 -translate-x-20">
+          <div class="media-container relative p-4 rounded-2xl bg-white/5 border border-white/10 overflow-hidden w-full max-w-md aspect-video flex items-center justify-center">
+            <div class="absolute inset-0 bg-radial-glow opacity-30"></div>
+            <div class="flex items-center justify-center gap-8 w-full h-full relative z-10">
+              <Image src={escudo412} alt="Escudo 412" class="w-1/3 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(0,231,1,0.4)] vs-logo-412" />
+              <span class="text-kick font-black text-2xl italic tracking-wider">VS</span>
+              <Image src={escudoLuzu} alt="Escudo Luzu" class="w-1/3 h-auto object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] vs-logo-luzu" />
+            </div>
+            <div class="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md py-1 px-3 rounded-lg text-center text-xs text-white/80 border border-white/5">
+              Partido histórico contra Luzu TV - Mayo 2026
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-card-wrapper w-full md:w-[45%] order-2 animate-right opacity-0 translate-x-20">
+          <div class="timeline-card glass-card p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden">
+            <div class="card-glow absolute inset-0 opacity-0 transition-opacity duration-300"></div>
+            <span class="card-date text-kick font-black text-sm uppercase tracking-widest block mb-2">Mayo 2026</span>
+            <h3 class="card-title text-2xl md:text-3xl font-black text-white italic uppercase mb-4">El Duelo de Gigantes</h3>
+            <p class="card-text text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+              Hoy en día, <strong>412</strong> es mucho más que un simple stream de fútbol. Se ha transformado en un verdadero fenómeno cultural con secciones insignia como <em>El Impostor Futbolero</em>, <em>La Subasta</em> o <em>El Rosco</em>, formatos altamente interactivos que son recreados por otros creadores de contenido de habla hispana en todo el mundo.
+            </p>
+            <p class="card-text text-neutral-300 text-sm md:text-base leading-relaxed font-light mt-3">
+              El impacto masivo del ciclo quedó firmemente demostrado en mayo de 2026, cuando el elenco de 412 desafió a la productora <strong>Luzu TV</strong> a un partido presencial de fútbol 5. El cruce, impulsado por meses de chicanas y rivalidades cruzadas en vivo, terminó con un emocionante 6-6 en los minutos reglamentarios y se definió en una tensa tanda de penales que favoreció a Luzu. Este evento histórico no solo paralizó el streaming hispanohablante con cientos de miles de espectadores simultáneos en directo, sino que demostró que 412 ha trascendido las pantallas de Kick y YouTube y se ha instalado definitivamente en el corazón de los amantes del fútbol en toda Latinoamérica.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animación del título de la sección
+  gsap.to('.historia-section .animate-title', {
+    scrollTrigger: {
+      trigger: '.historia-section',
+      start: 'top 80%',
+    },
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: 'power3.out',
+  });
+
+  // Animación del progreso de la línea central
+  gsap.to('.historia-section .timeline-progress', {
+    scrollTrigger: {
+      trigger: '.timeline-container',
+      start: 'top 70%',
+      end: 'bottom 70%',
+      scrub: true,
+    },
+    height: '100%',
+    ease: 'none',
+  });
+
+  // Animación de los elementos de la línea de tiempo
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  timelineItems.forEach((item) => {
+    const animateLeft = item.querySelector('.animate-left');
+    const animateRight = item.querySelector('.animate-right');
+    const dot = item.querySelector('.timeline-dot');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: item,
+        start: 'top 80%',
+      }
+    });
+
+    if (dot) {
+      tl.fromTo(dot, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(1.7)' });
+    }
+
+    if (animateLeft) {
+      tl.to(animateLeft, { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.2');
+    }
+
+    if (animateRight) {
+      tl.to(animateRight, { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.6');
+    }
+  });
+
+  // Efecto de brillo interactivo en las tarjetas al pasar el mouse
+  const cards = document.querySelectorAll('.timeline-card');
+  cards.forEach((card) => {
+    const glow = card.querySelector('.card-glow') as HTMLElement;
+    
+    card.addEventListener('mousemove', (e: any) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      if (glow) {
+        glow.style.opacity = '1';
+        glow.style.background = `radial-gradient(800px circle at ${x}px ${y}px, rgba(0, 231, 1, 0.06), transparent 40%)`;
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (glow) {
+        glow.style.opacity = '0';
+      }
+    });
+  });
+</script>
+
+<style>
+  .historia-section {
+    background-color: #000;
+  }
+
+  .text-kick {
+    color: #00e701;
+    text-shadow: 0 0 10px rgba(0, 231, 1, 0.2);
+  }
+
+  .bg-kick {
+    background-color: #00e701;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(0, 231, 1, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(0, 231, 1, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .bg-radial-glow {
+    background: radial-gradient(circle at center, rgba(0, 231, 1, 0.2) 0%, transparent 70%);
+  }
+
+  /* Animación del logo de 412 */
+  .logo-glow {
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      filter: drop-shadow(0 0 15px rgba(0, 231, 1, 0.3));
+      transform: scale(0.98);
+    }
+    100% {
+      filter: drop-shadow(0 0 30px rgba(0, 231, 1, 0.6));
+      transform: scale(1.02);
+    }
+  }
+
+  /* Animación de los escudos VS */
+  .vs-logo-412 {
+    animation: float412 3s ease-in-out infinite alternate;
+  }
+
+  .vs-logo-luzu {
+    animation: floatLuzu 3s ease-in-out infinite alternate;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes float412 {
+    0% { transform: translateY(0) rotate(-2deg); }
+    100% { transform: translateY(-8px) rotate(2deg); }
+  }
+
+  @keyframes floatLuzu {
+    0% { transform: translateY(0) rotate(2deg); }
+    100% { transform: translateY(-8px) rotate(-2deg); }
+  }
+
+  /* Evitar flashes iniciales si JS está habilitado */
+  .js .animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  .js .animate-right {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  .js .timeline-dot {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0);
+  }
+
+  /* Responsivo para móviles */
+  @media (max-width: 767px) {
+    .timeline-line {
+      left: 1rem;
+      transform: none;
+    }
+    .timeline-dot {
+      left: 1rem;
+      transform: translateY(-50%);
+    }
+    .timeline-card-wrapper {
+      padding-left: 2rem;
+    }
+    .timeline-media {
+      padding-left: 2rem;
+    }
+    .js .animate-left,
+    .js .animate-right {
+      transform: translateY(30px);
+    }
+  }
+</style>

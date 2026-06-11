@@ -46,9 +46,10 @@ Conductores: Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR, Agusneta.
 │   │   ├── Footer.astro      # Footer tipo cristal con borde superior neón animado
 │   │   ├── HeroSection.astro # Nueva sección Hero modular (Muchachos, Canvas, GSAP)
 │   │   ├── PartidosSection.astro # Nueva sección Partidos modular (Tabs, Video, Fuego/Chispas)
-│   │   └── InfoSection.astro # Nueva sección Info modular (Kick, Próximo programa, Aura)
+│   │   ├── InfoSection.astro # Nueva sección Info modular (Kick, Próximo programa, Aura)
+│   │   └── HistoriaSection.astro # Nueva sección Historia modular (Línea de tiempo animada, GSAP)
 │   ├── layouts/
-│   │   └── Layout.astro      # Shell HTML base (head, meta, slots)
+│   │   └── Layout.astro      # Shell HTML base (head, meta, slots, JSON-LD Schema)
 │   ├── pages/
 │   │   └── index.astro       # Landing page principal (Ensamblador de secciones)
 │   └── styles/
@@ -110,6 +111,29 @@ Conductores: Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR, Agusneta.
   - Color oficial `#00E701`, SVG oficial de Kick.
   - Calcula automáticamente si el próximo programa es Lunes (→ canal de Davo) o Viernes (→ canal de La Cobra).
 - Entrada animada con GSAP `.to()` + `.animate-up` class.
+
+#### Historia Section (`HistoriaSection.astro`)
+
+- **Diseño**: Línea de tiempo interactiva con diseño de alternancia izquierda/derecha.
+- **Contenido**: Relato histórico de aproximadamente 800 palabras estructurado en 4 hitos:
+  1. *El Origen en Pandemia* (con imágenes de Davo y Teo).
+  2. *El porqué del nombre* (con el logotipo oficial).
+  3. *La expansión del elenco* (con imagen grupal).
+  4. *El duelo con Luzu TV* (con los dos escudos en combate visual).
+- **Animaciones GSAP**:
+  - ScrollTrigger para la línea central de progreso, animando su altura del 0% al 100% de forma proporcional al scroll.
+  - ScrollTrigger de entrada suavizada para cada tarjeta y contenedor multimedia (desplazamientos de izquierda y derecha, y escalado en los puntos de la línea de tiempo).
+- **Efectos interactivos**: Efecto de brillo de vidrio interactivo en las tarjetas (`timeline-card`) que sigue la posición del cursor (`mousemove` en CSS/JS).
+- **SEO integrado**: Redactado estratégicamente para responder a las preguntas más frecuentes sobre la historia, integrantes y origen del nombre.
+
+#### Estructura SEO y Metadatos (`Layout.astro`)
+
+- **Metadatos Avanzados**: Incorporación de etiquetas Open Graph y Twitter Cards para mejorar las previsualizaciones al compartir en redes.
+- **Canonical Links**: Configurado en la dirección oficial para evitar contenido duplicado.
+- **Structured Data (Schema.org)**: Implementación de script JSON-LD en el `<head>` que define las entidades principales:
+  - `WebSite` para la información y descripción del sitio.
+  - `CreativeWorkSeries` (Serie/Programa) con el listado oficial de actores/conductores (Davo, Teo, La Cobra, Agusneta, Beno) y productora (Doxen Management).
+  - `FAQPage` con preguntas y respuestas optimizadas para Rich Results de Google sobre el origen, emisión e integrantes del programa.
 
 ---
 

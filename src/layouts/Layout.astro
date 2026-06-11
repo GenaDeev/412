@@ -16,6 +16,135 @@ import Footer from '../components/Footer.astro';
       content="412 es el programa de streaming de debate de fútbol y entretenimiento. Lunes y Viernes 22hs en Kick. Conducido por Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR y Agusneta."
     />
     <title>412 - El Programa de Fútbol</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://412futbolok.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://412futbolok.com/" />
+    <meta property="og:title" content="412 - El Programa de Fútbol" />
+    <meta
+      property="og:description"
+      content="412 es el programa de streaming de debate de fútbol y entretenimiento. Lunes y Viernes 22hs en Kick. Conducido por Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR y Agusneta."
+    />
+    <meta property="og:image" content="https://412futbolok.com/favicon.webp" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://412futbolok.com/" />
+    <meta property="twitter:title" content="412 - El Programa de Fútbol" />
+    <meta
+      property="twitter:description"
+      content="412 es el programa de streaming de debate de fútbol y entretenimiento. Lunes y Viernes 22hs en Kick. Conducido por Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR y Agusneta."
+    />
+    <meta property="twitter:image" content="https://412futbolok.com/favicon.webp" />
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://412futbolok.com/#website",
+            "url": "https://412futbolok.com/",
+            "name": "412 - El Programa de Fútbol",
+            "description": "Sitio web oficial del programa de streaming de debate de fútbol y entretenimiento 412."
+          },
+          {
+            "@type": "CreativeWorkSeries",
+            "@id": "https://412futbolok.com/#series",
+            "name": "412",
+            "description": "Programa de streaming de debate de fútbol y entretenimiento en el que un grupo de amigos y creadores de contenido analizan la actualidad del fútbol con debates, juegos y dinámicas interactivas.",
+            "genre": ["Deportes", "Fútbol", "Entretenimiento"],
+            "url": "https://412futbolok.com/",
+            "startDate": "2024",
+            "author": [
+              {
+                "@type": "Person",
+                "name": "Davo Xeneize",
+                "sameAs": "https://kick.com/davooxeneize"
+              },
+              {
+                "@type": "Person",
+                "name": "Teo D'Elía"
+              }
+            ],
+            "actor": [
+              {
+                "@type": "Person",
+                "name": "Davo Xeneize",
+                "alternateName": "Davoo Xeneize"
+              },
+              {
+                "@type": "Person",
+                "name": "Teo D'Elía"
+              },
+              {
+                "@type": "Person",
+                "name": "La Cobra",
+                "alternateName": "Lautaro del Campo"
+              },
+              {
+                "@type": "Person",
+                "name": "La Agusneta",
+                "alternateName": "Agusneta"
+              },
+              {
+                "@type": "Person",
+                "name": "Benito SDR",
+                "alternateName": "Beno"
+              }
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Doxen Management",
+              "url": "https://doxen.com.ar"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://412futbolok.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué es el programa 412?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "412 es un popular programa de streaming enfocado en el fútbol y entretenimiento, donde cinco de los creadores de contenido más influyentes de Argentina (Davo Xeneize, Teo D'Elía, La Cobra, La Agusneta y Benito SDR) debaten sobre el fútbol argentino e internacional, realizan retos de conocimiento y juegan a dinámicas como 'El Impostor Futbolero'."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Quiénes son los integrantes de 412?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El panel principal de conductores de 412 está compuesto por Davo Xeneize, Teo D'Elía, La Cobra (Lautaro del Campo), La Agusneta (Agustina) y Benito SDR (Beno)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Por qué se llama 412 el programa?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El nombre del programa proviene del cumpleaños de sus fundadores originales, Davo Xeneize y Teo D'Elía, quienes nacieron el 4 de diciembre (4/12 en formato de fecha corta)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuándo y dónde se transmite 412?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El show se transmite en vivo todos los lunes y viernes a las 22:00 hs (hora de Argentina) a través de la plataforma de streaming Kick, y todos los cortes de debate y resúmenes completos se suben a su canal oficial de YouTube (@programa412)."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>
