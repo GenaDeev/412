@@ -9,7 +9,13 @@ import logo from '../assets/images/logo.webp';
 >
   <div class="info-content flex flex-col items-center text-center gap-11">
     <div class="logo-wrapper animate-up">
-      <Image class="logo-large" src={logo} alt="Logo de 412" />
+      <Image
+        class="logo-large"
+        src={logo}
+        alt="Logo de 412"
+        widths={[350, 700]}
+        sizes="(max-width: 767px) 300px, 350px"
+      />
       <div class="logo-aura" style={`--logo-url: url(${logo.src})`}></div>
     </div>
     <h1 class="main-title animate-up uppercase m-0">
