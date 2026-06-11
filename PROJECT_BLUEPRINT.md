@@ -110,6 +110,10 @@ Conductores: Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR, Agusneta.
 - **Botón Kick** dinámico (client-side):
   - Color oficial `#00E701`, SVG oficial de Kick.
   - Calcula automáticamente si el próximo programa es Lunes (→ canal de Davo) o Viernes (→ canal de La Cobra).
+- **Contador Regresivo Animado**:
+  - Muestra Días, Horas, Minutos y Segundos restantes para el próximo stream (Lunes o Viernes a las 22:00 hs Arg).
+  - Diseño moderno de reloj retro en cristal (`glassmorphism`) con línea divisoria intermedia, bordes neón verde Kick y colones parpadeantes.
+  - **Micro-animación de Dígitos (GSAP)**: Cada vez que un número cambia, el dígito viejo se desliza hacia arriba desvaneciéndose y el nuevo dígito entra desde abajo con traslación y opacidad, creando un efecto ultra fluido de deslizamiento de tarjeta (`updateValue`).
 - Entrada animada con GSAP `.to()` + `.animate-up` class.
 
 #### Historia Section (`HistoriaSection.astro`)
