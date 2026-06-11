@@ -62,7 +62,15 @@ const players = [
 >
   <div class="logo-container">
     <div class="logo-wrapper">
-      <Image class="logo" src={logo} alt="Logo de 412" />
+      <Image
+        class="logo"
+        src={logo}
+        alt="Logo de 412"
+        loading="eager"
+        fetchpriority="high"
+        widths={[300, 350, 700]}
+        sizes="(max-width: 767px) 300px, 350px"
+      />
       <div class="logo-aura" style={`--logo-url: url(${logo.src})`}></div>
     </div>
   </div>
@@ -78,6 +86,8 @@ const players = [
       data-player="p1"
       width="400"
       height="600"
+      widths={[200, 400]}
+      sizes="(max-width: 767px) 200px, 400px"
     />
     <Image
       src={teo}
@@ -86,6 +96,8 @@ const players = [
       data-player="p2"
       width="400"
       height="600"
+      widths={[200, 400]}
+      sizes="(max-width: 767px) 200px, 400px"
     />
     <Image
       src={davo}
@@ -94,6 +106,8 @@ const players = [
       data-player="p3"
       width="400"
       height="600"
+      widths={[200, 400]}
+      sizes="(max-width: 767px) 200px, 400px"
     />
     <Image
       src={nine}
@@ -102,6 +116,8 @@ const players = [
       data-player="p4"
       width="400"
       height="600"
+      widths={[200, 400]}
+      sizes="(max-width: 767px) 200px, 400px"
     />
     <Image
       src={beno}
@@ -110,6 +126,8 @@ const players = [
       data-player="p5"
       width="400"
       height="600"
+      widths={[200, 400]}
+      sizes="(max-width: 767px) 200px, 400px"
     />
 
     {
@@ -167,7 +185,7 @@ const players = [
     <div class="mobile-card-zone" id="mobile-card-zone">
       <div
         id="mobile-click-indicator"
-        class="text-white/40 text-center w-full py-14 uppercase tracking-[0.2em] text-xs transition-opacity duration-300 absolute top-30 left-0 font-light"
+        class="text-white/60 text-center w-full py-14 uppercase tracking-[0.2em] text-xs transition-opacity duration-300 absolute top-30 left-0 font-light"
       >
         Toca a alguuno de los pibes para ver sus datos
       </div>
@@ -244,9 +262,17 @@ const players = [
   hitCanvas.height = 1;
   const hitCtx = hitCanvas.getContext('2d', { willReadFrequently: true });
 
+  const rectCache = new Map<HTMLImageElement, DOMRect>();
+  window.addEventListener('scroll', () => rectCache.clear(), { passive: true });
+  window.addEventListener('resize', () => rectCache.clear(), { passive: true });
+
   function getAlphaAt(img: HTMLImageElement, clientX: number, clientY: number) {
     if (!img.naturalWidth || !hitCtx) return 0;
-    const rect = img.getBoundingClientRect();
+    let rect = rectCache.get(img);
+    if (!rect) {
+      rect = img.getBoundingClientRect();
+      rectCache.set(img, rect);
+    }
     const imgRatio = img.naturalWidth / img.naturalHeight;
     const boxRatio = rect.width / rect.height;
     let renderWidth,
@@ -275,7 +301,6 @@ const players = [
   const mm = gsap.matchMedia();
 
   mm.add('(min-width: 768px)', () => {
-    gsap.set('.character', { visibility: 'visible' });
 
     const container = document.querySelector(
       '.characters-container',
@@ -341,7 +366,7 @@ const players = [
       ease: 'power2.inOut',
     }).to('.scroll-indicator', { opacity: 0, y: 20, duration: 0.5 }, '<');
 
-    tl.from(
+    tl.fromTo(
       '.character',
       {
         y: 150,
@@ -352,6 +377,13 @@ const players = [
         opacity: 0,
         scale: 1.5,
         filter: 'blur(20px)',
+      },
+      {
+        y: 0,
+        x: 0,
+        opacity: 1,
+        scale: 1,
+        filter: 'blur(0px)',
         duration: 2,
         stagger: { amount: 1, from: 'center' },
         ease: 'power3.out',
@@ -445,7 +477,6 @@ const players = [
   });
 
   mm.add('(max-width: 767px)', () => {
-    gsap.set('.character', { visibility: 'visible' });
 
     gsap.fromTo(
       '.logo-container',
@@ -677,7 +708,8 @@ const players = [
   }
 
   .js .character {
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .character {
@@ -691,6 +723,7 @@ const players = [
   }
 
   .interactive {
+    pointer-events: auto;
     transition:
       filter 0.4s ease,
       transform 0.4s ease !important;

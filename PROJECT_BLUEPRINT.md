@@ -141,7 +141,7 @@ Conductores: Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR, Agusneta.
 
 ### FOUC Prevention
 
-Los personajes tienen `visibility: hidden` in CSS y son revelados por `gsap.set()` en el `<script>`. Esto evita un flash de contenido al recargar la página.
+Los personajes tienen `opacity: 0` y `pointer-events: none` en CSS (`.js .character`) para evitar que se rendericen antes de la animación. Son revelados directamente mediante animaciones `fromTo` de GSAP en el `<script>`, previniendo el parpadeo (flash of unstyled content) en cargas y recargas rápidas. Sus interacciones se habilitan mediante `pointer-events: auto` en la clase `.interactive`.
 
 ### Hover con `style.setProperty('...', 'important')`
 
