@@ -1,0 +1,290 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/images/logo.webp';
+---
+
+<section
+  id="info"
+  class="info-section w-full min-h-screen flex justify-center items-center relative z-10 py-12"
+>
+  <div class="info-content flex flex-col items-center text-center gap-11">
+    <div class="logo-wrapper animate-up">
+      <Image class="logo-large" src={logo} alt="Logo de 412" />
+      <div class="logo-aura" style={`--logo-url: url(${logo.src})`}></div>
+    </div>
+    <h1 class="main-title animate-up uppercase m-0">
+      <span class="sr-only!">412 - </span>
+      EL PROGRAMA DE FÚTBOL
+    </h1>
+
+    <a
+      href="https://kick.com/davooxeneize"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="kick-btn animate-up"
+      id="next-stream-btn"
+    >
+      <svg
+        class="kick-logo w-[45px] h-[45px]"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="2"
+      >
+        <path
+          d="M37 .036h164.448v113.621h54.71v-56.82h54.731V.036h164.448v170.777h-54.73v56.82h-54.711v56.8h54.71v56.82h54.73V512.03H310.89v-56.82h-54.73v-56.8h-54.711v113.62H37V.036z"
+          fill="currentColor"></path>
+      </svg>
+      <div class="btn-text flex flex-col items-start">
+        <span
+          class="btn-subtitle uppercase text-[0.7rem] md:text-[0.85rem] font-extrabold tracking-[1px] md:tracking-[2px] opacity-80"
+          >PRÓXIMO PROGRAMA</span
+        >
+        <span
+          class="btn-title text-[1.2rem] md:text-[1.6rem] font-black tracking-[1px]"
+          id="next-stream-text">LUNES Y VIERNES 22HS</span
+        >
+      </div>
+    </a>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const updateNextStream = () => {
+    const now = new Date();
+    const dayOfWeek = now.getDay();
+    const hour = now.getHours();
+
+    let nextStreamDay = 'LUNES';
+    let nextStreamLink = 'https://kick.com/davooxeneize';
+
+    if (
+      (dayOfWeek === 1 && hour >= 22) ||
+      dayOfWeek === 2 ||
+      dayOfWeek === 3 ||
+      dayOfWeek === 4 ||
+      (dayOfWeek === 5 && hour < 22)
+    ) {
+      nextStreamDay = 'VIERNES';
+      nextStreamLink = 'https://kick.com/lacobraaa';
+    }
+
+    const btn = document.getElementById('next-stream-btn');
+    const text = document.getElementById('next-stream-text');
+    if (btn && text) {
+      btn.setAttribute('href', nextStreamLink);
+      text.textContent = `${nextStreamDay} 22HS`;
+    }
+  };
+
+  updateNextStream();
+
+  gsap.to('.info-section .animate-up:not(.logo-wrapper)', {
+    scrollTrigger: {
+      trigger: '.info-section',
+      start: 'top 75%',
+    },
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.2,
+    ease: 'power3.out',
+  });
+
+  const mm = gsap.matchMedia();
+
+  mm.add('(min-width: 768px)', () => {
+    const infoLogoTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.info-section',
+        start: 'top 75%',
+      },
+    });
+
+    infoLogoTl
+      .fromTo(
+        '.info-section .logo-wrapper',
+        { opacity: 0, scale: 0.8, y: 50 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power3.out',
+        },
+      )
+      .fromTo(
+        '.info-section .logo-aura',
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.4,
+          ease: 'power1.inOut',
+        },
+        '-=0.3',
+      );
+  });
+
+  mm.add('(max-width: 767px)', () => {
+    const infoLogoMobileTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.info-section',
+        start: 'top 95%',
+        end: 'top 45%',
+        scrub: 0.5,
+      },
+    });
+
+    infoLogoMobileTl
+      .fromTo(
+        '.info-section .logo-wrapper',
+        { opacity: 0, scale: 0.5, y: 80 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          ease: 'power2.out',
+        },
+      )
+      .fromTo(
+        '.info-section .logo-aura',
+        { opacity: 0 },
+        {
+          opacity: 1,
+          ease: 'power1.inOut',
+        },
+        '>-0.25',
+      );
+  });
+</script>
+
+<style>
+  .info-section {
+    background: radial-gradient(circle at center, #0a120a 0%, #000 100%);
+  }
+
+  .js .animate-up {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .js .info-section .logo-aura {
+    opacity: 0;
+  }
+
+  .logo-large {
+    width: 350px;
+    filter: drop-shadow(0 0 5px rgba(0, 231, 1, 0.2));
+  }
+
+  .logo-wrapper {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-aura {
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    width: 102%;
+    height: 102%;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-mask-image: var(--logo-url);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: var(--logo-url);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    filter: drop-shadow(0 0 4px #00e701) drop-shadow(0 0 12px #00e701)
+      drop-shadow(0 0 25px rgba(0, 231, 1, 0.6));
+    pointer-events: none;
+  }
+
+  .logo-aura::before {
+    content: '';
+    position: absolute;
+    top: -1%;
+    left: -1%;
+    width: 102%;
+    height: 102%;
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      transparent 60%,
+      #00e701 90%,
+      transparent 100%
+    );
+    animation: spin 2.5s linear infinite;
+  }
+
+  .logo-large {
+    position: relative;
+    filter: drop-shadow(0 0 2px #00e701)
+      drop-shadow(0 0 4px rgba(0, 231, 1, 0.2))
+      drop-shadow(0 0 24px rgba(0, 231, 1, 0.4));
+    z-index: 2;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .main-title {
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 0.9;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-style: italic;
+  }
+
+  .kick-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #00e701;
+    color: #000;
+    padding: 15px 35px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 25px rgba(0, 231, 1, 0.4);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .kick-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 231, 1, 0.6);
+  }
+
+  @media (max-width: 767px) {
+    .main-title {
+      font-size: 3.5rem;
+      line-height: 0.95;
+    }
+
+    .logo-large {
+      width: 200px;
+    }
+
+    .kick-btn {
+      padding: 12px 24px;
+      gap: 10px;
+    }
+  }
+</style>

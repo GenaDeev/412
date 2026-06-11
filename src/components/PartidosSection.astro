@@ -1,0 +1,1226 @@
+---
+import { Image } from 'astro:assets';
+import escudo412 from '../assets/images/escudo_412.webp';
+import escudoluzu from '../assets/images/escudo_luzu.webp';
+---
+
+<section
+  id="partidos"
+  class="partidos-section w-full min-h-screen flex flex-col justify-center items-center relative py-20 overflow-hidden"
+>
+  <div
+    class="graffiti text-3xl md:text-5xl lg:text-7xl opacity-40 left-[8%] top-[10%] -rotate-[12deg]"
+  >
+    FUERA VENDIDOS $
+  </div>
+  <div
+    class="graffiti text-2xl md:text-4xl lg:text-6xl opacity-35 right-[6%] top-[18%] rotate-[8deg]"
+  >
+    CAGONES PECHOFRIOS
+  </div>
+  <div
+    class="graffiti text-3xl md:text-5xl lg:text-7xl opacity-30 left-[5%] bottom-[15%] rotate-[6deg]"
+  >
+    TODO x DINERO $
+  </div>
+  <div
+    class="graffiti text-2xl md:text-3xl lg:text-5xl opacity-25 right-[12%] bottom-[22%] -rotate-[10deg]"
+  >
+    ARQUERO SIN MANOS
+  </div>
+
+  <div class="spark-emitter">
+    <div class="spark s1"></div>
+    <div class="spark s2"></div>
+    <div class="spark s3"></div>
+    <div class="spark s4"></div>
+    <div class="spark s5"></div>
+    <div class="spark s6"></div>
+    <div class="spark s7"></div>
+    <div class="spark s8"></div>
+    <div class="spark s9"></div>
+    <div class="spark s10"></div>
+  </div>
+
+  <svg
+    viewBox="0 0 200 200"
+    class="absolute left-[-2%] top-[-5%] w-[350px] h-[350px] opacity-25 pointer-events-none z-0"
+  >
+    <defs>
+      <filter id="glow-white-left" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+        <feMerge>
+          <feMergeNode in="blur"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+    <circle
+      cx="100"
+      cy="100"
+      r="6"
+      fill="#ffffff"
+      filter="url(#glow-white-left)"></circle>
+    <circle cx="100" cy="100" r="2" fill="#fff"></circle>
+    <path
+      d="M100 100 L98 80 L105 60 L100 40 L106 20 L98 0"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L115 85 L125 70 L145 60 L160 40 L180 20"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M125 70 L115 55 L120 40"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L120 95 L140 85 L160 88 L180 80 L200 75"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L120 102 L140 98 L160 105 L180 97 L200 100"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L120 110 L135 125 L155 130 L175 145 L190 155"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M135 125 L150 115 L160 105"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L110 120 L118 140 L130 160 L125 180 L135 200"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L98 120 L104 140 L97 160 L102 180 L100 200"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L88 120 L80 135 L68 155 L58 175 L48 190"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M80 135 L95 145 L100 160"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L80 110 L65 120 L50 125 L35 135 L10 140"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L80 98 L60 102 L40 97 L20 103 L0 100"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L82 88 L68 80 L52 68 L38 60 L10 50"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M68 80 L60 65 L50 55"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L90 80 L82 60 L70 45 L78 25 L70 0"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+  </svg>
+  <svg
+    viewBox="0 0 200 200"
+    class="absolute right-[2%] bottom-[5%] w-[400px] h-[400px] opacity-20 pointer-events-none z-0"
+  >
+    <defs>
+      <filter
+        id="glow-white-right"
+        x="-50%"
+        y="-50%"
+        width="200%"
+        height="200%"
+      >
+        <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+        <feMerge>
+          <feMergeNode in="blur"></feMergeNode>
+          <feMergeNode in="SourceGraphic"></feMergeNode>
+        </feMerge>
+      </filter>
+    </defs>
+    <circle
+      cx="100"
+      cy="100"
+      r="6"
+      fill="#ffffff"
+      filter="url(#glow-white-right)"></circle>
+    <circle cx="100" cy="100" r="2" fill="#fff"></circle>
+    <path
+      d="M100 100 L98 80 L105 60 L100 40 L106 20 L98 0"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L115 85 L125 70 L145 60 L160 40 L180 20"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M125 70 L115 55 L120 40"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L120 95 L140 85 L160 88 L180 80 L200 75"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L120 102 L140 98 L160 105 L180 97 L200 100"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L120 110 L135 125 L155 130 L175 145 L190 155"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M135 125 L150 115 L160 105"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L110 120 L118 140 L130 160 L125 180 L135 200"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L98 120 L104 140 L97 160 L102 180 L100 200"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L88 120 L80 135 L68 155 L58 175 L48 190"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M80 135 L95 145 L100 160"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L80 110 L65 120 L50 125 L35 135 L10 140"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L80 98 L60 102 L40 97 L20 103 L0 100"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L82 88 L68 80 L52 68 L38 60 L10 50"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M68 80 L60 65 L50 55"
+      stroke="#ffffff"
+      stroke-width="1"
+      fill="none"
+      stroke-linejoin="round"></path>
+    <path
+      d="M100 100 L90 80 L82 60 L70 45 L78 25 L70 0"
+      stroke="#ffffff"
+      stroke-width="1.2"
+      fill="none"
+      stroke-linejoin="round"></path>
+  </svg>
+
+  <div
+    class="partidos-content flex flex-col items-center gap-12 w-full max-w-7xl px-6 relative z-10"
+  >
+    <div class="text-center animate-up">
+      <h2
+        class="section-title text-4xl md:text-6xl font-black italic tracking-tighter uppercase text-white m-0"
+      >
+        PARTIDOS
+      </h2>
+      <span
+        class="section-subtitle text-xs md:text-sm text-white/40 tracking-[3px] uppercase mt-2 block"
+      >
+        Jugadores, la concha de su madre.
+      </span>
+    </div>
+
+    <div
+      class="match-grid grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-start"
+    >
+      <div class="lg:col-span-5 flex flex-col gap-6 w-full animate-left">
+        <div
+          class="match-card relative overflow-hidden flex flex-col items-center p-8 rounded-2xl border border-red-500/20 bg-[#0f0a0a]/75 backdrop-blur-md shadow-2xl"
+        >
+          <div class="fire-glow"></div>
+
+          <div class="flex flex-col items-center text-center gap-1 mb-8 z-10">
+            <span
+              class="match-date text-[0.75rem] font-bold text-white/50 tracking-[2px] uppercase"
+            >
+              31 DE MAYO DE 2026
+            </span>
+            <span
+              class="match-relator text-[0.7rem] font-medium text-red-500/80 tracking-[1px] uppercase"
+            >
+              Relatos de Sebastián "Pollo" Vignolo
+            </span>
+          </div>
+
+          <div class="flex items-center justify-between w-full gap-4 z-10 mb-8">
+            <div class="flex flex-col items-center text-center flex-1">
+              <Image
+                src={escudo412}
+                alt="Escudo de 412"
+                class="shield-img shield-412 w-20 h-20 md:w-24 md:h-24 object-contain transition-transform hover:scale-105 duration-300"
+              />
+              <span
+                class="team-name text-sm md:text-base font-black tracking-wider text-white mt-3 uppercase"
+              >
+                412
+              </span>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-1 px-4">
+              <div class="flex items-center gap-3">
+                <span
+                  class="score text-5xl md:text-7xl font-black tracking-tight text-white font-mono"
+                >
+                  6
+                </span>
+                <span
+                  class="score-divider text-2xl md:text-3xl font-black text-white/30 font-mono"
+                >
+                  -
+                </span>
+                <span
+                  class="score text-5xl md:text-7xl font-black tracking-tight text-white font-mono"
+                >
+                  6
+                </span>
+              </div>
+              <div
+                class="penalty-badge px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-[0.65rem] font-black tracking-[1.5px] text-red-500 uppercase mt-2"
+              >
+                Luzu Gana 3-2 en Penales
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center text-center flex-1">
+              <Image
+                src={escudoluzu}
+                alt="Escudo de Luzu"
+                class="shield-img shield-luzu w-20 h-20 md:w-24 md:h-24 object-contain transition-transform hover:scale-105 duration-300"
+              />
+              <span
+                class="team-name text-sm md:text-base font-black tracking-wider text-white mt-3 uppercase"
+              >
+                Luzu
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="revancha-banner w-full py-3 px-6 rounded-xl border border-orange-500/30 bg-gradient-to-r from-orange-600/10 to-red-600/10 flex items-center justify-center z-10"
+          >
+            <span
+              class="revancha-text text-base md:text-lg font-black tracking-[4px] text-orange-500 uppercase animate-pulse"
+            >
+              Habrá Revancha
+            </span>
+          </div>
+        </div>
+
+        <div class="video-container flex flex-col gap-3 w-full">
+          <span
+            class="text-[0.65rem] font-bold text-white/40 tracking-[3px] uppercase mt-2 select-none"
+          >
+            Resumen del Partido
+          </span>
+          <div
+            class="video-wrapper relative w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-[#0f0a0a]"
+          >
+            <lite-youtube
+              videoid="YanyIcXhlbk"
+              playlabel="Ver Resumen del Partido"
+              style="background-image: url('https://i.ytimg.com/vi/YanyIcXhlbk/maxresdefault.jpg');"
+              class="w-full aspect-video"></lite-youtube>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 flex flex-col gap-6 w-full animate-right">
+        <div
+          class="tabs-container flex flex-col p-6 rounded-2xl border border-white/10 bg-[#070707]/80 backdrop-blur-md shadow-2xl"
+        >
+          <div class="tabs-header flex gap-4 border-b border-white/5 pb-4 mb-6">
+            <button
+              class="tab-btn active px-5 py-2 rounded-xl text-xs md:text-sm font-black tracking-wider uppercase transition-all duration-300 border border-white/10"
+              data-tab="goles"
+            >
+              Goles
+            </button>
+            <button
+              class="tab-btn px-5 py-2 rounded-xl text-xs md:text-sm font-black tracking-wider uppercase transition-all duration-300 border border-transparent"
+              data-tab="penales"
+            >
+              Penales
+            </button>
+          </div>
+
+          <div class="tab-content active" id="tab-goles">
+            <div
+              class="timeline relative pl-4 border-l border-white/10 flex flex-col gap-8"
+            >
+              <div
+                class="timeline-period text-xs font-black tracking-[2px] text-white/30 uppercase mt-2"
+              >
+                Primer Tiempo
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    1 - 0
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-white"
+                  >
+                    N. Occhiatto
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-red-500 uppercase"
+                  >
+                    Luzu
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    2 - 0
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-white"
+                  >
+                    El Trinche
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-red-500 uppercase"
+                  >
+                    Luzu
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    3 - 0
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-white"
+                  >
+                    N. Occhiatto
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-red-500 uppercase"
+                  >
+                    Luzu
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    4 - 0
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-white"
+                  >
+                    El Trinche
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-red-500 uppercase"
+                  >
+                    Luzu
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    4 - 1
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-[#00e701] drop-shadow-[0_0_8px_rgba(0,231,1,0.3)]"
+                  >
+                    Teo D'Elia
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-[#00e701] uppercase"
+                  >
+                    412
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    4 - 2
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-[#00e701] drop-shadow-[0_0_8px_rgba(0,231,1,0.3)]"
+                  >
+                    Teo D'Elia
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-[#00e701] uppercase"
+                  >
+                    412
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4 pb-2"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    5 - 2
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-white"
+                  >
+                    N. Occhiatto
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-red-500 uppercase"
+                  >
+                    Luzu
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-period text-xs font-black tracking-[2px] text-white/30 uppercase mt-4"
+              >
+                Segundo Tiempo
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    5 - 3
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-[#00e701] drop-shadow-[0_0_8px_rgba(0,231,1,0.3)]"
+                  >
+                    Agusneta
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-[#00e701] uppercase"
+                  >
+                    412
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    5 - 4
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-[#00e701] drop-shadow-[0_0_8px_rgba(0,231,1,0.3)]"
+                  >
+                    Davo Xeneize
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-[#00e701] uppercase"
+                  >
+                    412
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    5 - 5
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-[#00e701] drop-shadow-[0_0_8px_rgba(0,231,1,0.3)]"
+                  >
+                    Teo D'Elia
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-[#00e701] uppercase"
+                  >
+                    412
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    6 - 5
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-white"
+                  >
+                    S. Talledo
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-red-500 uppercase"
+                  >
+                    Luzu
+                  </span>
+                </div>
+              </div>
+
+              <div
+                class="timeline-item flex items-center justify-between gap-4"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="timeline-score text-sm font-black font-mono text-white/50"
+                  >
+                    6 - 6
+                  </span>
+                  <span
+                    class="timeline-player text-[0.9rem] font-bold text-[#00e701] drop-shadow-[0_0_8px_rgba(0,231,1,0.3)]"
+                  >
+                    Agusneta
+                  </span>
+                  <span
+                    class="timeline-team text-[0.7rem] font-bold text-[#00e701] uppercase"
+                  >
+                    412
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-penales">
+            <div class="penalties-grid flex flex-col gap-6">
+              <div
+                class="flex justify-between items-center text-[0.7rem] font-black text-white/30 tracking-[1.5px] uppercase border-b border-white/5 pb-2"
+              >
+                <span>PENAL / EQUIPO</span>
+                <div class="flex gap-16 md:gap-24">
+                  <span class="w-24 text-center">LUZU</span>
+                  <span class="w-24 text-center">412</span>
+                </div>
+              </div>
+
+              <div
+                class="penalty-row flex justify-between items-center py-2 border-b border-white/5"
+              >
+                <span class="text-xs font-black tracking-wider text-white/50">
+                  Penal 1
+                </span>
+                <div class="flex gap-16 md:gap-24">
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      M. Giles
+                    </span>
+                    <span
+                      class="penalty-status gol text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Gol
+                    </span>
+                  </div>
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      La Cobra
+                    </span>
+                    <span
+                      class="penalty-status errada text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Afuera
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="penalty-row flex justify-between items-center py-2 border-b border-white/5"
+              >
+                <span class="text-xs font-black tracking-wider text-white/50">
+                  Penal 2
+                </span>
+                <div class="flex gap-16 md:gap-24">
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      Trinche
+                    </span>
+                    <span
+                      class="penalty-status errada text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Afuera
+                    </span>
+                  </div>
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-[#00e701] text-center">
+                      Davo Xeneize
+                    </span>
+                    <span
+                      class="penalty-status gol text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Gol
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="penalty-row flex justify-between items-center py-2 border-b border-white/5"
+              >
+                <span class="text-xs font-black tracking-wider text-white/50">
+                  Penal 3
+                </span>
+                <div class="flex gap-16 md:gap-24">
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      Purre
+                    </span>
+                    <span
+                      class="penalty-status gol text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Gol
+                    </span>
+                  </div>
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      Teo D'Elia
+                    </span>
+                    <span
+                      class="penalty-status errada text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Atajado
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="penalty-row flex justify-between items-center py-2 border-b border-white/5"
+              >
+                <span class="text-xs font-black tracking-wider text-white/50">
+                  Penal 4
+                </span>
+                <div class="flex gap-16 md:gap-24">
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      Occhiato
+                    </span>
+                    <span
+                      class="penalty-status gol text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Gol
+                    </span>
+                  </div>
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-[#00e701] text-center">
+                      Agusneta
+                    </span>
+                    <span
+                      class="penalty-status gol text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Gol
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="penalty-row flex justify-between items-center py-2">
+                <span class="text-xs font-black tracking-wider text-white/50">
+                  Penal 5
+                </span>
+                <div class="flex gap-16 md:gap-24">
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      S. Talledo
+                    </span>
+                    <span
+                      class="penalty-status errada text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Atajado
+                    </span>
+                  </div>
+                  <div class="w-24 flex flex-col items-center">
+                    <span class="text-xs font-bold text-white text-center">
+                      Mernuel
+                    </span>
+                    <span
+                      class="penalty-status errada text-[0.6rem] font-black mt-1 uppercase"
+                    >
+                      Atajado
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import 'lite-youtube-embed';
+  import 'lite-youtube-embed/src/lite-yt-embed.css';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tabName = btn.getAttribute('data-tab');
+      tabBtns.forEach((b) => {
+        b.classList.toggle('active', b === btn);
+        if (b === btn) {
+          b.classList.add('border-white/10');
+          b.classList.remove('border-transparent');
+        } else {
+          b.classList.remove('border-white/10');
+          b.classList.add('border-transparent');
+        }
+      });
+
+      tabContents.forEach((content) => {
+        const contentId = content.getAttribute('id');
+        content.classList.toggle('active', contentId === `tab-${tabName}`);
+      });
+    });
+  });
+
+  const partidosTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.partidos-section',
+      start: 'top 75%',
+    },
+  });
+
+  partidosTl
+    .fromTo(
+      '.partidos-section .section-title',
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+    )
+    .fromTo(
+      '.partidos-section .section-subtitle',
+      { opacity: 0, y: 15 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
+      '-=0.5',
+    )
+    .fromTo(
+      '.partidos-section .animate-left',
+      { opacity: 0, x: -50 },
+      { opacity: 1, x: 0, duration: 1, ease: 'power3.out' },
+      '-=0.3',
+    )
+    .fromTo(
+      '.partidos-section .animate-right',
+      { opacity: 0, x: 50 },
+      { opacity: 1, x: 0, duration: 1, ease: 'power3.out' },
+      '-=1',
+    )
+    .fromTo(
+      '.partidos-section .graffiti',
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: (index: number) => {
+          const opacities = [0.4, 0.35, 0.3, 0.25];
+          return opacities[index];
+        },
+        scale: 1,
+        duration: 1.2,
+        stagger: 0.15,
+        ease: 'back.out(1.2)',
+      },
+      '-=0.8',
+    );
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap');
+
+  .partidos-section {
+    background: radial-gradient(circle at center, #140d0d 0%, #000000 100%);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+  }
+
+  .graffiti {
+    display: block;
+    font-family: 'Rubik Spray Paint', 'Impact', sans-serif;
+    color: rgba(239, 68, 68, 0.18);
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.1);
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    font-weight: normal;
+  }
+
+  @media (min-width: 768px) {
+    .graffiti {
+      color: rgba(239, 68, 68, 0.35);
+      text-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+    }
+  }
+
+  .match-card {
+    box-shadow:
+      0 0 45px rgba(239, 68, 68, 0.45),
+      0 0 90px rgba(249, 115, 22, 0.25),
+      inset 0 0 35px rgba(239, 68, 68, 0.2);
+    position: relative;
+    border: 1px solid rgba(239, 68, 68, 0.35) !important;
+  }
+
+  .shield-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .shield-img.shield-412 {
+    filter: drop-shadow(0 0 15px rgba(0, 231, 1, 0.65));
+  }
+
+  .shield-img.shield-luzu {
+    filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.65));
+  }
+
+  .fire-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 16px;
+    background: linear-gradient(
+      to top,
+      rgba(239, 68, 68, 0.2) 0%,
+      rgba(249, 115, 22, 0.08) 40%,
+      transparent 100%
+    );
+    box-shadow:
+      inset 0 0 30px rgba(239, 68, 68, 0.35),
+      inset 0 -15px 45px rgba(249, 115, 22, 0.55);
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    0% {
+      box-shadow:
+        inset 0 0 25px rgba(239, 68, 68, 0.3),
+        inset 0 -10px 30px rgba(249, 115, 22, 0.45),
+        0 0 25px rgba(239, 68, 68, 0.3);
+      border-color: rgba(239, 68, 68, 0.35);
+    }
+    100% {
+      box-shadow:
+        inset 0 0 55px rgba(239, 68, 68, 0.55),
+        inset 0 -25px 70px rgba(251, 146, 60, 0.8),
+        0 0 55px rgba(249, 115, 22, 0.7);
+      border-color: rgba(249, 115, 22, 0.7);
+    }
+  }
+
+  .spark-emitter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .spark {
+    position: absolute;
+    background: radial-gradient(
+      circle,
+      #ffaa00 0%,
+      #ff5500 50%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    opacity: 0;
+    bottom: -20px;
+    filter: drop-shadow(0 0 4px #ff5500);
+  }
+
+  .s1 {
+    width: 6px;
+    height: 6px;
+    left: 10%;
+    animation: rise 5s infinite linear;
+  }
+  .s2 {
+    width: 4px;
+    height: 4px;
+    left: 25%;
+    animation: rise 6s infinite linear 1s;
+  }
+  .s3 {
+    width: 7px;
+    height: 7px;
+    left: 40%;
+    animation: rise 4.5s infinite linear 0.5s;
+  }
+  .s4 {
+    width: 5px;
+    height: 5px;
+    left: 55%;
+    animation: rise 5.5s infinite linear 2s;
+  }
+  .s5 {
+    width: 8px;
+    height: 8px;
+    left: 70%;
+    animation: rise 4s infinite linear 1.5s;
+  }
+  .s6 {
+    width: 5px;
+    height: 5px;
+    left: 85%;
+    animation: rise 6.5s infinite linear 2.5s;
+  }
+  .s7 {
+    width: 6px;
+    height: 6px;
+    left: 20%;
+    animation: rise 5.2s infinite linear 3s;
+  }
+  .s8 {
+    width: 4px;
+    height: 4px;
+    left: 50%;
+    animation: rise 5.8s infinite linear 0.2s;
+  }
+  .s9 {
+    width: 7px;
+    height: 7px;
+    left: 65%;
+    animation: rise 4.8s infinite linear 3.5s;
+  }
+  .s10 {
+    width: 5px;
+    height: 5px;
+    left: 80%;
+    animation: rise 6.2s infinite linear 1.2s;
+  }
+
+  @keyframes rise {
+    0% {
+      transform: translateY(0) scale(1) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.85;
+    }
+    90% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-105vh) scale(0.3) translateX(40px);
+      opacity: 0;
+    }
+  }
+
+  .tab-btn {
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+
+  .tab-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .tab-btn.active {
+    background: #00e701;
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 231, 1, 0.3);
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #000;
+  }
+
+  .timeline-item:has(.timeline-team.text-\[\#00e701\])::before {
+    background: #00e701;
+    box-shadow: 0 0 8px #00e701;
+  }
+
+  .timeline-item:has(.timeline-team.text-red-500)::before {
+    background: #ef4444;
+    box-shadow: 0 0 8px #ef4444;
+  }
+
+  .penalty-status {
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+
+  .penalty-status.gol {
+    background: rgba(0, 231, 1, 0.1);
+    color: #00e701;
+    border: 1px solid rgba(0, 231, 1, 0.2);
+    box-shadow: 0 0 10px rgba(0, 231, 1, 0.15);
+  }
+
+  .penalty-status.errada {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
+  }
+</style>
