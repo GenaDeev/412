@@ -1,0 +1,2 @@
+# ads.txt placeholder for cuatrodoce.vercel.app
+# No active ad networks

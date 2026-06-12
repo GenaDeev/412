@@ -1,7 +1,17 @@
 ---
+import { getImage } from 'astro:assets';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import logo from '../assets/images/logo.webp';
+
+// Optimizar el logo para pre-carga responsiva coincidiendo con la etiqueta de HeroSection
+const optimizedLogo = await getImage({
+  src: logo,
+  widths: [300, 350, 700],
+  sizes: "(max-width: 767px) 300px, 350px",
+  format: 'webp'
+});
 ---
 
 <!doctype html>
@@ -11,37 +21,51 @@ import Footer from '../components/Footer.astro';
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link 
+      rel="preload" 
+      as="image" 
+      href={optimizedLogo.src} 
+      imagesrcset={optimizedLogo.srcSet.attribute} 
+      imagesizes={optimizedLogo.attributes.sizes || "(max-width: 767px) 300px, 350px"}
+      fetchpriority="high" 
+    />
+    <link rel="apple-touch-icon" href="/favicon.webp" />
     <meta
       name="description"
-      content="412 es el programa de streaming de debate de fútbol y entretenimiento. Lunes y Viernes 22hs en Kick. Conducido por Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR y Agusneta."
+      content="412 es el programa de streaming de fútbol conducido por Davo Xeneize, La Cobra, Teo D'Elía, Benito SDR y Agusneta los Lunes y Viernes."
     />
-    <title>412 - El Programa de Fútbol</title>
+    <title>412 - El Programa de Streaming de Debate de Fútbol y Humor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" media="print" onload="this.media='all'" />
+    
+    <!-- Hreflang Tags para localización -->
+    <link rel="alternate" hreflang="es" href="https://cuatrodoce.vercel.app/" />
+    <link rel="alternate" hreflang="x-default" href="https://cuatrodoce.vercel.app/" />
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://cuatrodoce.vercel.app/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cuatrodoce.vercel.app/" />
-    <meta property="og:title" content="412 - El Programa de Fútbol" />
+    <meta property="og:title" content="412 - El Programa de Streaming de Debate de Fútbol y Humor" />
     <meta
       property="og:description"
-      content="412 es el programa de streaming de debate de fútbol y entretenimiento. Lunes y Viernes 22hs en Kick. Conducido por Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR y Agusneta."
+      content="412 es el programa de streaming de fútbol conducido por Davo Xeneize, La Cobra, Teo D'Elía, Benito SDR y Agusneta los Lunes y Viernes."
     />
-    <meta property="og:image" content="https://cuatrodoce.vercel.app/favicon.webp" />
+    <meta property="og:image" content="https://cuatrodoce.vercel.app/og_image.webp" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://cuatrodoce.vercel.app/" />
-    <meta property="twitter:title" content="412 - El Programa de Fútbol" />
+    <meta property="twitter:title" content="412 - El Programa de Streaming de Debate de Fútbol y Humor" />
     <meta
       property="twitter:description"
-      content="412 es el programa de streaming de debate de fútbol y entretenimiento. Lunes y Viernes 22hs en Kick. Conducido por Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR y Agusneta."
+      content="412 es el programa de streaming de fútbol conducido por Davo Xeneize, La Cobra, Teo D'Elía, Benito SDR y Agusneta los Lunes y Viernes."
     />
-    <meta property="twitter:image" content="https://cuatrodoce.vercel.app/favicon.webp" />
+    <meta property="twitter:image" content="https://cuatrodoce.vercel.app/og_image.webp" />
 
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -50,20 +74,21 @@ import Footer from '../components/Footer.astro';
         "@graph": [
           {
             "@type": "WebSite",
-            "@id": "https://cuatrodoce.vercel.app/",
+            "@id": "https://cuatrodoce.vercel.app/#website",
             "url": "https://cuatrodoce.vercel.app/",
             "name": "412 - El Programa de Fútbol",
             "description": "Sitio web oficial del programa de streaming de debate de fútbol y entretenimiento 412."
           },
           {
-            "@type": "CreativeWorkSeries",
-            "@id": "https://cuatrodoce.vercel.app/#info",
+            "@type": "TVSeries",
+            "@id": "https://cuatrodoce.vercel.app/#series",
             "name": "412",
+            "image": "https://cuatrodoce.vercel.app/favicon.webp",
             "description": "Programa de streaming de debate de fútbol y entretenimiento en el que un grupo de amigos y creadores de contenido analizan la actualidad del fútbol con debates, juegos y dinámicas interactivas.",
             "genre": ["Deportes", "Fútbol", "Entretenimiento"],
             "url": "https://cuatrodoce.vercel.app/",
             "startDate": "2024",
-            "author": [
+            "creator": [
               {
                 "@type": "Person",
                 "name": "Davo Xeneize",
@@ -108,7 +133,7 @@ import Footer from '../components/Footer.astro';
           },
           {
             "@type": "FAQPage",
-            "@id": "https://cuatrodoce.vercel.app/#historia",
+            "@id": "https://cuatrodoce.vercel.app/#faq",
             "mainEntity": [
               {
                 "@type": "Question",

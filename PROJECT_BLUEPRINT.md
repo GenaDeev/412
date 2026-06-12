@@ -51,6 +51,7 @@ Conductores: Davo Xeneize, La Cobra, Teo D'Elia, Benito SDR, Agusneta.
 │   ├── layouts/
 │   │   └── Layout.astro      # Shell HTML base (head, meta, slots, JSON-LD Schema)
 │   ├── pages/
+│   │   ├── 404.astro         # Página de error 404 personalizada con temática de fútbol
 │   │   └── index.astro       # Landing page principal (Ensamblador de secciones)
 │   └── styles/
 │       └── global.css        # Tailwind CSS v4 import
