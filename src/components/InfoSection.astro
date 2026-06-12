@@ -206,9 +206,38 @@ import logo from '../assets/images/logo.webp';
     }
   };
 
-  updateNextStream();
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  let countdownInterval: any = null;
+
+  const startCountdown = () => {
+    updateNextStream();
+    updateCountdown();
+    if (!countdownInterval) {
+      countdownInterval = setInterval(updateCountdown, 1000);
+    }
+  };
+
+  const stopCountdown = () => {
+    if (countdownInterval) {
+      clearInterval(countdownInterval);
+      countdownInterval = null;
+    }
+  };
+
+  const countdownContainer = document.getElementById('stream-countdown');
+  if (countdownContainer && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startCountdown();
+        } else {
+          stopCountdown();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(countdownContainer);
+  } else {
+    startCountdown();
+  }
 
   gsap.to('.info-section .animate-up:not(.logo-wrapper)', {
     scrollTrigger: {
@@ -351,6 +380,13 @@ import logo from '../assets/images/logo.webp';
       transparent 100%
     );
     animation: spin 2.5s linear infinite;
+  }
+
+  @media (max-width: 767px) {
+    .logo-aura::before {
+      animation: none !important;
+      background: #00e701 !important;
+    }
   }
 
   .logo-large {

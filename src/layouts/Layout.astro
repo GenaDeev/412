@@ -35,10 +35,13 @@ const optimizedLogo = await getImage({
       content="412 es el programa de streaming de fútbol conducido por Davo Xeneize, La Cobra, Teo D'Elía, Benito SDR y Agusneta los Lunes y Viernes."
     />
     <title>412 - El Programa de Streaming de Debate de Fútbol y Humor</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" media="print" onload="this.media='all'" />
+    <link 
+      rel="preload" 
+      href="/fonts/RubikSprayPaint.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin="anonymous" 
+    />
     
     <!-- Hreflang Tags para localización -->
     <link rel="alternate" hreflang="es" href="https://cuatrodoce.vercel.app/" />
@@ -205,6 +208,14 @@ const optimizedLogo = await getImage({
 </html>
 
 <style>
+  @font-face {
+    font-family: 'Rubik Spray Paint';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/RubikSprayPaint.woff2') format('woff2');
+  }
+
   html {
     scroll-behavior: smooth;
   }

@@ -401,7 +401,7 @@ import escudoluzu from '../assets/images/escudo_luzu.webp';
             <lite-youtube
               videoid="YanyIcXhlbk"
               playlabel="Ver Resumen del Partido"
-              style="background-image: url('https://i.ytimg.com/vi/YanyIcXhlbk/maxresdefault.jpg');"
+              style="background-image: url('https://i.ytimg.com/vi_webp/YanyIcXhlbk/maxresdefault.webp');"
               class="w-full aspect-video"></lite-youtube>
           </div>
         </div>
@@ -1056,6 +1056,16 @@ import escudoluzu from '../assets/images/escudo_luzu.webp';
     height: 100%;
     overflow: hidden;
     pointer-events: none;
+  }
+
+  @media (max-width: 767px) {
+    .partidos-section > svg {
+      display: none !important;
+    }
+    .spark {
+      display: none !important;
+      animation: none !important;
+    }
   }
 
   .spark {
